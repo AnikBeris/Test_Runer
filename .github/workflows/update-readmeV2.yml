@@ -135,12 +135,14 @@ jobs:
           name: compiled-readme
           path: .
 
-      # Самое главное — создаём PR
+      # 1. Создаём Pull Request
       - name: Создать Pull Request
+        id: cpr  # ID нужно, чтобы передать номер PR в следующий шаг
+
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: regenerate README from parts"
+          commit-message: "chore: regenerate README from parts"    # название коммита
           title: "Обновлён README из частей (авто)"
           body: |
             Автоматическая пересборка README.md из файлов в `.github/README_PARTS/`
@@ -148,11 +150,43 @@ jobs:
             Триггер: ${{ github.event_name }}
             SHA: ${{ github.sha }}
 
+            Что изменилось:
+            • Заголовок, описание, донаты
+            • Навигация
+            • Все статьи `5.MAIN_Article_*.md` (добавлены/обновлены/отсортированы)
+            • Футер
+
             Можно мержить одной кнопкой — это чистая автогенерация
+
+          # Автор и коммиттер
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          branch: readme/auto-update           # временная ветка (будет удалена после)
+
+          # Основные настройки
+          branch: readme/auto-update
           base: main
           delete-branch: true
-          labels: automated,documentation
-          add-paths: README.md                     # только этот файл изменился
+
+          # Метки
+          labels: |
+            automated
+            documentation
+
+          # Кто будет назначен ответственным (assignees)
+          # Укажи свои логины без @
+          assignees: AnikBeris # вторую_персону_если_нужно
+
+          # Какие файлы попадут в PR
+          add-paths: README.md
+
+
+
+      # 2. Включаем автомерж для только что созданного PR
+      - name: Включить автомерж PR
+        if: steps.cpr.outputs.pull-request-operation == 'created'  # Только если PR создан (не обновлён)
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}  # Номер PR из предыдущего шага
+          merge-method: squash  # Варианты: squash, rebase, merge (squash — самый чистый)
+          
