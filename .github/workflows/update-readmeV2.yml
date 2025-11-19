@@ -181,12 +181,11 @@ jobs:
 
 
 
-      # 2. Включаем автомерж для только что созданного PR
-      - name: Включить автомерж PR 
+      # 2. Включаем автомерж — только те параметры, которые реально существуют
+      - name: Включить автомерж PR
         if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}  # Номер PR из предыдущего шага
-          merge-method: squash  # Варианты: squash, rebase, merge (squash — самый чистый)
-          
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash   # squash | merge | rebase
