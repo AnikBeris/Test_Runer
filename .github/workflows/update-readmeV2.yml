@@ -1,52 +1,49 @@
 name: V2 UPDATE-README
 
-# Когда запускается
 on:
-  workflow_dispatch:                                 # Ручной запуск из вкладки Actions
+  workflow_dispatch:
   schedule:
-    - cron: '10 9 * * *'                             # Каждый день в 09:10 UTC (= 12:10 по Москве)
+    - cron: '10 9 * * *'           # каждый день в 12:10 по Москве
   push:
     branches: [ main ]
     paths:
-      - ".github/README_PARTS/*"                     # Любое изменение в папке с частями
-      - ".github/README_PARTS/5.MAIN_Article_*.md"   # Особенно важно — новые или изменённые статьи
+      - ".github/README_PARTS/*"
+      - ".github/README_PARTS/5.MAIN_Article_*.md"
 
-# Разрешения (обязательно для прямого пуша в main)
+# Теперь достаточно только чтения + создания PR
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 
 jobs:
-  build-readme:
+  build-and-pr:
     runs-on: ubuntu-latest
-    name: 📄 Генерация README.md из частей
+    name: Генерация README → Pull Request
 
     steps:
-      # 1. Просто приветствие и информация о запуске
-      - name: 🔄 Вывод информации о запуске
+      # 1. Информация о запуске
+      - name: Вывод информации о запуске
         run: |
           echo "Запущено событием: ${{ github.event_name }}"
-          echo "Раннер: ${{ runner.os }}-${{ runner.arch }}"
           echo "Репозиторий: ${{ github.repository }}"
           echo "Ветка: ${{ github.ref_name }}"
           date
 
-      # 2. Клонируем репозиторий полностью
-      - name: 📥 Клонирование репозитория
+      # 2. Клонируем репозиторий
+      - name: Клонирование репозитория
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0        # нужна полная история для git push
-          clean: true           # чистая рабочая папка
+          fetch-depth: 0
 
-      # 3. Настраиваем git под бота
-      - name: 📌 Настройка Git (github-actions[bot])
+      # 3. Настраиваем git (нужно для create-pull-request)
+      - name: Настройка Git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      # 4. Самая важная часть — сборка README.md
-      - name: 📂 Сборка README.md из частей
+      # 4. Собираем README.md из частей
+      - name: Сборка README.md из частей
         run: |
-          # ──────────────── Пути и переменные ────────────────
           PARTS=".github/README_PARTS"
           OUTPUT="README.md"
 
@@ -57,24 +54,18 @@ jobs:
           MAIN_Header="$PARTS/5.MAIN_Header.md"
           FOOTER="$PARTS/6.FOOTER.md"
 
-          # Список всех статей, отсортированных по номеру (01, 02, 10 и т.д.)
           MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
 
-          echo "📄 Найдены статьи MAIN_Article_:"
-          echo "$MAIN_ARTICLES" | sed 's/^/  • /'
+          echo "Найдены статьи MAIN_Article_:"
+          echo "$MAIN_ARTICLES" | sed 's/^/  • /' || true
 
-          # ──────────────── Проверка обязательных файлов ────────────────
+          # Проверка наличия обязательных файлов
           for file in "$HEADER" "$DESCRIPTION" "$DONATION" "$NAV" "$MAIN_Header" "$FOOTER"; do
-            if [[ ! -f "$file" ]]; then
-              echo "❌ ОШИБКА: не найден обязательный файл $file"
-              exit 1
-            fi
+            [[ -f "$file" ]] || { echo "ОШИБКА: не найден $file"; exit 1; }
           done
 
-          # ──────────────── Сама сборка ────────────────
-          echo "✅ Начинаем сборку $OUTPUT …"
-
-          > "$OUTPUT"   # очищаем файл (или создаём новый)
+          echo "Начинаем сборку $OUTPUT …"
+          > "$OUTPUT"
 
           cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$DESCRIPTION"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
@@ -82,38 +73,47 @@ jobs:
           cat "$NAV"           >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$MAIN_Header"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
 
-          # Добавляем все статьи по порядку
           if [[ -n "$MAIN_ARTICLES" ]]; then
             for article in $MAIN_ARTICLES; do
-              echo "📌 Добавляем $(basename "$article")"
+              echo "Добавляем $(basename "$article")"
               cat "$article" >> "$OUTPUT"
               echo -e "\n\n" >> "$OUTPUT"
             done
           else
-            echo "❌ Внимание: статей 5.MAIN_Article_*.md не найдено"
+            echo "Внимание: статей не найдено"
           fi
 
           cat "$FOOTER" >> "$OUTPUT"
-          echo -e "\n" >> "$OUTPUT"   # финальный перевод строки (красиво)
+          echo -e "\n" >> "$OUTPUT"
 
-          echo "✅ README.md успешно собран!"
+          echo "README.md успешно собран!"
 
-      # 5. Коммитим и пушим изменения напрямую в main
-      - name: Commit & Push обновлённого README.md
-        run: |
-          git add README.md
+      # 5. Создаём Pull Request вместо прямого пуша
+      - name: Создание Pull Request с обновлённым README
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: regenerate README from parts"
+          title: "Обновлён README из частей"
+          body: |
+            Автоматическая пересборка README.md из файлов в `.github/README_PARTS/`
 
-          if git diff --staged --quiet; then
-            echo "❌ ✅ Нет изменений в README.md — коммит не нужен"
-            exit 0
-          fi
+            Триггер: ${{ github.event_name }}
+            Коммит: ${{ github.sha }}
 
-          git commit -m "chore: auto-update README from parts
+            Что изменилось:
+            • Заголовок, описание, донаты
+            • Навигация
+            • Все статьи `5.MAIN_Article_*.md` (добавлены/обновлены/отсортированы)
+            • Футер
 
-          Событие: ${{ github.event_name }}
-          SHA: ${{ github.sha }}"
+            Можно мержить одной кнопкой — это чистая автогенерация
 
-          # Пушим напрямую в main (можно поменять на другую ветку)
-          git push origin HEAD:main
-
-          echo "✅ README.md обновлён и запушен в main"
+          branch: readme/auto-update            # временная ветка
+          base: main
+          delete-branch: true
+          labels: |
+            automated
+            documentation
+          add-paths: |
+            README.md
