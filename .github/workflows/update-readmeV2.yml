@@ -1,35 +1,40 @@
 name: V2 UPDATE-README
 
+# Запускается вручную, по расписанию и при изменении частей README
 on:
-  workflow_dispatch:
+  workflow_dispatch:                                 # Ручной запуск из вкладки Actions
   schedule:
-    - cron: '10 9 * * *'           # каждый день в 12:10 по Москве
+    - cron: '10 9 * * *'                             # Каждый день в 09:10 UTC = 12:10 по Москве
   push:
     branches: [ main ]
     paths:
-      - ".github/README_PARTS/*"
-      - ".github/README_PARTS/5.MAIN_Article_*.md"
+      - ".github/README_PARTS/*"                     # Любое изменение в папке с кусочками
+      - ".github/README_PARTS/5.MAIN_Article_*.md"   # Особенно важно — новые/изменённые статьи
 
+# Обязательные права, без них будет ошибка 403
 permissions:
-  contents: write          # обязательно для создания ветки и коммита
-  pull-requests: write
+  contents: write          # Позволяет создавать ветки, коммитить и пушить временную ветку
+  pull-requests: write     # Нужно для создания Pull Request
 
 jobs:
-  # 1. Подготовка
+  # 1. Подготовка — просто информация + клонирование репозитория
   prepare:
     runs-on: ubuntu-latest
     name: Подготовка
     steps:
       - name: Информация о запуске
         run: |
-          echo "Запуск: ${{ github.event_name }}"
+          echo "Событие: ${{ github.event_name }}"
           echo "Репозиторий: ${{ github.repository }}"
-          date '+%Y-%m-%d %H:%M:%S'
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+          echo "Ветка: ${{ github.ref_name }}"
+          date '+%Y-%m-%d %H:%M:%S (UTC)'
 
-  # 2. Настройка Git — теперь работает (есть checkout!)
+      - name: Клонирование репозитория
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # Полная история нужна для корректной работы git
+
+  # 2. Настройка автора коммитов — отдельный шаг для красоты в логах
   setup-git:
     needs: prepare
     runs-on: ubuntu-latest
@@ -38,12 +43,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Конфигурация Git
+
+      - name: Установить автора коммитов
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "Git настроен под github-actions[bot]"
 
-  # 3. Сборка README.md
+  # 3. Основная работа — сборка одного большого README.md из кусочков
   compile-readme:
     needs: setup-git
     runs-on: ubuntu-latest
@@ -58,6 +65,7 @@ jobs:
           PARTS=".github/README_PARTS"
           OUTPUT="README.md"
 
+          # Пути к обязательным файлам
           HEADER="$PARTS/1.HEADER.md"
           DESCRIPTION="$PARTS/2.DESCRIPTION.md"
           DONATION="$PARTS/3.DONATION.md"
@@ -65,27 +73,31 @@ jobs:
           MAIN_Header="$PARTS/5.MAIN_Header.md"
           FOOTER="$PARTS/6.FOOTER.md"
 
+          # Находим и сортируем статьи по номеру (01, 02, 10…)
           MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
 
-          echo "Найдены статьи:"
+          echo "Найдено статей:"
           echo "$MAIN_ARTICLES" | sed 's/^/  • /' || true
 
+          # Проверка, что все обязательные файлы на месте
           for file in "$HEADER" "$DESCRIPTION" "$DONATION" "$NAV" "$MAIN_Header" "$FOOTER"; do
-            [[ -f "$file" ]] || { echo "ОШИБКА: не найден $file"; exit 1; }
+            [[ -f "$file" ]] || { echo "ОШИБКА: не найден файл $file"; exit 1; }
           done
 
           echo "Собираем $OUTPUT …"
-          > "$OUTPUT"
+          > "$OUTPUT"   # очищаем/создаём файл
 
+          # Последовательно склеиваем всё с отступами в 2 пустые строки
           cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$DESCRIPTION"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$DONATION"      >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$NAV"           >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$MAIN_Header"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
 
+          # Добавляем все статьи по порядку
           if [[ -n "$MAIN_ARTICLES" ]]; then
             for article in $MAIN_ARTICLES; do
-              echo "Добавляем $(basename "$article")"
+              echo "Добавляем: $(basename "$article")"
               cat "$article" >> "$OUTPUT"
               echo -e "\n\n" >> "$OUTPUT"
             done
@@ -96,16 +108,17 @@ jobs:
           cat "$FOOTER" >> "$OUTPUT"
           echo -e "\n" >> "$OUTPUT"
 
-          echo "README.md успешно собран!"
+          echo "README.md успешно собран и готов к отправке!"
 
-      - name: Сохранить как артефакт
+      # Передаём собранный файл в следующий job
+      - name: Сохранить README как артефакт
         uses: actions/upload-artifact@v4
         with:
           name: compiled-readme
           path: README.md
           retention-days: 1
 
-  # 4. Создание Pull Request
+  # 4. Создаём Pull Request вместо прямого пуша в main
   create-pull-request:
     needs: compile-readme
     runs-on: ubuntu-latest
@@ -115,28 +128,31 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Получаем готовый README.md из предыдущего шага
       - name: Скачать собранный README.md
         uses: actions/download-artifact@v4
         with:
           name: compiled-readme
           path: .
 
+      # Самое главное — создаём PR
       - name: Создать Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: regenerate README from parts"
           title: "Обновлён README из частей (авто)"
           body: |
-            Автоматическая сборка README.md из файлов в `.github/README_PARTS/`
+            Автоматическая пересборка README.md из файлов в `.github/README_PARTS/`
 
             Триггер: ${{ github.event_name }}
             SHA: ${{ github.sha }}
 
-            Можно мержить одной кнопкой
+            Можно мержить одной кнопкой — это чистая автогенерация
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          branch: readme/auto-update
+          branch: readme/auto-update           # временная ветка (будет удалена после)
           base: main
           delete-branch: true
           labels: automated,documentation
-          add-paths: README.md
+          add-paths: README.md                     # только этот файл изменился
