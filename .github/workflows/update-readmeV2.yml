@@ -1,0 +1,119 @@
+name: V2 UPDATE-README
+
+# Когда запускается
+on:
+  workflow_dispatch:                                 # Ручной запуск из вкладки Actions
+  schedule:
+    - cron: '10 9 * * *'                             # Каждый день в 09:10 UTC (= 12:10 по Москве)
+  push:
+    branches: [ main ]
+    paths:
+      - ".github/README_PARTS/*"                     # Любое изменение в папке с частями
+      - ".github/README_PARTS/5.MAIN_Article_*.md"   # Особенно важно — новые или изменённые статьи
+
+# Разрешения (обязательно для прямого пуша в main)
+permissions:
+  contents: write
+
+jobs:
+  build-readme:
+    runs-on: ubuntu-latest
+    name: 📄 Генерация README.md из частей
+
+    steps:
+      # 1. Просто приветствие и информация о запуске
+      - name: 🔄 Вывод информации о запуске
+        run: |
+          echo "Запущено событием: ${{ github.event_name }}"
+          echo "Раннер: ${{ runner.os }}-${{ runner.arch }}"
+          echo "Репозиторий: ${{ github.repository }}"
+          echo "Ветка: ${{ github.ref_name }}"
+          date
+
+      # 2. Клонируем репозиторий полностью
+      - name: 📥 Клонирование репозитория
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # нужна полная история для git push
+          clean: true           # чистая рабочая папка
+
+      # 3. Настраиваем git под бота
+      - name: 📌 Настройка Git (github-actions[bot])
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # 4. Самая важная часть — сборка README.md
+      - name: 📂 Сборка README.md из частей
+        run: |
+          # ──────────────── Пути и переменные ────────────────
+          PARTS=".github/README_PARTS"
+          OUTPUT="README.md"
+
+          HEADER="$PARTS/1.HEADER.md"
+          DESCRIPTION="$PARTS/2.DESCRIPTION.md"
+          DONATION="$PARTS/3.DONATION.md"
+          NAV="$PARTS/4.NAV.md"
+          MAIN_Header="$PARTS/5.MAIN_Header.md"
+          FOOTER="$PARTS/6.FOOTER.md"
+
+          # Список всех статей, отсортированных по номеру (01, 02, 10 и т.д.)
+          MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
+
+          echo "📄 Найдены статьи MAIN_Article_:"
+          echo "$MAIN_ARTICLES" | sed 's/^/  • /'
+
+          # ──────────────── Проверка обязательных файлов ────────────────
+          for file in "$HEADER" "$DESCRIPTION" "$DONATION" "$NAV" "$MAIN_Header" "$FOOTER"; do
+            if [[ ! -f "$file" ]]; then
+              echo "❌ ОШИБКА: не найден обязательный файл $file"
+              exit 1
+            fi
+          done
+
+          # ──────────────── Сама сборка ────────────────
+          echo "✅ Начинаем сборку $OUTPUT …"
+
+          > "$OUTPUT"   # очищаем файл (или создаём новый)
+
+          cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$DESCRIPTION"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$DONATION"      >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$NAV"           >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$MAIN_Header"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+
+          # Добавляем все статьи по порядку
+          if [[ -n "$MAIN_ARTICLES" ]]; then
+            for article in $MAIN_ARTICLES; do
+              echo "📌 Добавляем $(basename "$article")"
+              cat "$article" >> "$OUTPUT"
+              echo -e "\n\n" >> "$OUTPUT"
+            done
+          else
+            echo "❌ Внимание: статей 5.MAIN_Article_*.md не найдено"
+          fi
+
+          cat "$FOOTER" >> "$OUTPUT"
+          echo -e "\n" >> "$OUTPUT"   # финальный перевод строки (красиво)
+
+          echo "✅ README.md успешно собран!"
+
+      # 5. Коммитим и пушим изменения напрямую в main
+      - name: Commit & Push обновлённого README.md
+        run: |
+          git add README.md
+
+          if git diff --staged --quiet; then
+            echo "❌ ✅ Нет изменений в README.md — коммит не нужен"
+            exit 0
+          fi
+
+          git commit -m "chore: auto-update README from parts
+
+          Событие: ${{ github.event_name }}
+          SHA: ${{ github.sha }}"
+
+          # Пушим напрямую в main (можно поменять на другую ветку)
+          git push origin HEAD:main
+
+          echo "✅ README.md обновлён и запушен в main"
