@@ -18,8 +18,7 @@ permissions:
 jobs:
   build-and-pr:
     runs-on: ubuntu-latest
-    name: Генерация README → Pull Request
-
+    name: Подгатовка
     steps:
       # 1. Информация о запуске
       - name: Вывод информации о запуске
@@ -35,12 +34,22 @@ jobs:
         with:
           fetch-depth: 0
 
+  Opttions-Git:
+    needs: build-and-pr
+    runs-on: ubuntu-latest
+    steps:
       # 3. Настраиваем git (нужно для create-pull-request)
       - name: Настройка Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+
+
+  Compiling-README:
+    needs: Opttions-Git
+    runs-on: ubuntu-latest
+    steps:
       # 4. Собираем README.md из частей
       - name: Сборка README.md из частей
         run: |
@@ -87,8 +96,10 @@ jobs:
           echo -e "\n" >> "$OUTPUT"
 
           echo "README.md успешно собран!"
-  create-pr:
-    needs: build-and-pr
+
+
+  Pull-Request:
+    needs: Compiling-README
     runs-on: ubuntu-latest
     steps:
       # 5. Создаём Pull Request вместо прямого пуша
