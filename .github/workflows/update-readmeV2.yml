@@ -87,7 +87,10 @@ jobs:
           echo -e "\n" >> "$OUTPUT"
 
           echo "README.md успешно собран!"
-
+  create-pr:
+    needs: build-and-pr
+    runs-on: ubuntu-latest
+    steps:
       # 5. Создаём Pull Request вместо прямого пуша
       - name: Создание Pull Request с обновлённым README
         uses: peter-evans/create-pull-request@v6
