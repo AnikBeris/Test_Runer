@@ -3,56 +3,40 @@ name: V2 UPDATE-README
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 9 * * *'           # каждый день в 12:10 по Москве
+    - cron: '10 9 * * *'           # 12:10 по Москве
   push:
     branches: [ main ]
     paths:
       - ".github/README_PARTS/*"
       - ".github/README_PARTS/5.MAIN_Article_*.md"
 
-# Теперь достаточно только чтения + создания PR
+# Эти права обязательны!
 permissions:
-  contents: read
+  contents: write          # теперь можно создавать ветки и коммитить
   pull-requests: write
 
-
 jobs:
-  build-and-pr:
+  build-and-create-pr:
     runs-on: ubuntu-latest
-    name: Подгатовка
-    steps:
-      # 1. Информация о запуске
-      - name: Вывод информации о запуске
-        run: |
-          echo "Запущено событием: ${{ github.event_name }}"
-          echo "Репозиторий: ${{ github.repository }}"
-          echo "Ветка: ${{ github.ref_name }}"
-          date
+    name: Сборка README + создание PR
 
-      # 2. Клонируем репозиторий
+    steps:
+      - name: Информация о запуске
+        run: |
+          echo "Запущено: ${{ github.event_name }}"
+          echo "Репозиторий: ${{ github.repository }}"
+          date '+%Y-%m-%d %H:%M:%S'
+
       - name: Клонирование репозитория
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-  Opttions-Git:
-    needs: build-and-pr
-    runs-on: ubuntu-latest
-    name: Git
-    steps:
-      # 3. Настраиваем git (нужно для create-pull-request)
       - name: Настройка Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-
-
-  Compiling-README:
-    needs: Opttions-Git
-    runs-on: ubuntu-latest
-    steps:
-      # 4. Собираем README.md из частей
       - name: Сборка README.md из частей
         run: |
           PARTS=".github/README_PARTS"
@@ -67,15 +51,14 @@ jobs:
 
           MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
 
-          echo "Найдены статьи MAIN_Article_:"
+          echo "Найдены статьи:"
           echo "$MAIN_ARTICLES" | sed 's/^/  • /' || true
 
-          # Проверка наличия обязательных файлов
           for file in "$HEADER" "$DESCRIPTION" "$DONATION" "$NAV" "$MAIN_Header" "$FOOTER"; do
             [[ -f "$file" ]] || { echo "ОШИБКА: не найден $file"; exit 1; }
           done
 
-          echo "Начинаем сборку $OUTPUT …"
+          echo "Собираем $OUTPUT …"
           > "$OUTPUT"
 
           cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
@@ -90,8 +73,6 @@ jobs:
               cat "$article" >> "$OUTPUT"
               echo -e "\n\n" >> "$OUTPUT"
             done
-          else
-            echo "Внимание: статей не найдено"
           fi
 
           cat "$FOOTER" >> "$OUTPUT"
@@ -99,37 +80,21 @@ jobs:
 
           echo "README.md успешно собран!"
 
-
-  Pull-Request:
-    needs: Compiling-README
-    runs-on: ubuntu-latest
-    steps:
-      # 5. Создаём Pull Request вместо прямого пуша
-      - name: Создание Pull Request с обновлённым README
+      - name: Создание Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: regenerate README from parts"
-          title: "Обновлён README из частей"
+          title: "Обновлён README из частей (автосборка)"
           body: |
-            Автоматическая пересборка README.md из файлов в `.github/README_PARTS/`
+            Автоматическая сборка README.md из файлов в `.github/README_PARTS/`
 
             Триггер: ${{ github.event_name }}
-            Коммит: ${{ github.sha }}
+            SHA: ${{ github.sha }}
 
-            Что изменилось:
-            • Заголовок, описание, донаты
-            • Навигация
-            • Все статьи `5.MAIN_Article_*.md` (добавлены/обновлены/отсортированы)
-            • Футер
-
-            Можно мержить одной кнопкой — это чистая автогенерация
-
-          branch: readme/auto-update            # временная ветка
+            Можно мержить одной кнопкой — чистая автогенерация.
+          branch: readme/auto-update
           base: main
           delete-branch: true
-          labels: |
-            automated
-            documentation
-          add-paths: |
-            README.md
+          labels: automated,documentation
+          add-paths: README.md
