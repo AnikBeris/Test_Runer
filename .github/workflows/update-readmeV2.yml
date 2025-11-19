@@ -136,59 +136,26 @@ jobs:
           path: .
 
       # 1. Создаём Pull Request
-      - name: Создать Pull Request
-        id: cpr  # ID нужно, чтобы передать номер PR в следующий шаг
-
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: regenerate README from parts"    # название коммита
-          title: "Обновлён README из частей (авто)"
-          body: |
-            Автоматическая пересборка README.md из файлов в `.github/README_PARTS/`
-
-            Триггер: ${{ github.event_name }}
-            SHA: ${{ github.sha }}
-
-            Что изменилось:
-            • Заголовок, описание, донаты
-            • Навигация
-            • Все статьи `5.MAIN_Article_*.md` (добавлены/обновлены/отсортированы)
-            • Футер
-
-            Можно мержить одной кнопкой — это чистая автогенерация
-
-          # Автор и коммиттер
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-
-          # Основные настройки
-          branch: readme/auto-update
-          base: main
-          delete-branch: true
-
-          # Метки
-          labels: |
-            automated
-            documentation
-
-          # Кто будет назначен ответственным (assignees)
-          # Укажи свои логины без @
-          assignees: AnikBeris # вторую_персону_если_нужно
-
-          # Какие файлы попадут в PR
-          add-paths: README.md
-
-
-
-      # 2. Включаем автомерж — только те параметры, которые реально существуют
-      - name: Создать PR и сразу смержить (даже на защищённой ветке)
+      - name: Создать PR и авто-мердж (pascalgn)
         uses: pascalgn/automerge-action@v0.16.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_LABEL: "automated"
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"
-          MERGE_DELETE_BRANCH: "true"
-          UPDATE_METHOD: "rebase"          # обходит «branch not up to date»
-          MERGE_FILTER_AUTHOR: "github-actions[bot]"
+
+          # Конфигурация мержа (актуальные параметры v0.16.4)
+          MERGE_LABELS: "automated"                    # Метка, которая триггерит мерж (было MERGE_LABEL — убрали!)
+          MERGE_METHOD: "squash"                       # Squash для чистой истории
+          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"  # Кастомное сообщение
+          MERGE_DELETE_BRANCH: "true"                  # Удаляем ветку после мержа
+          MERGE_REMOVE_LABELS: "automated"             # Убираем метку после мержа
+
+          # Конфигурация обновления PR (rebase на base)
+          UPDATE_METHOD: "rebase"                      # Rebase для обхода "up to date"
+          UPDATE_LABELS: "automated"                   # Та же метка для обновления
+
+          # Фильтры (только для твоего бота)
+          MERGE_FILTER_AUTHOR: "github-actions[bot]"   # Только PR от бота
+
+          # Дополнительно (опционально, для надёжности)
+          MERGE_RETRIES: "3"                           # 3 попытки, если checks висят
+          MERGE_RETRY_SLEEP: "10000"                   # 10 сек между попытками
+          MERGE_FORKS: "false"                         # Не мержим форки (для безопасности)
