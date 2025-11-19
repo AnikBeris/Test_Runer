@@ -3,7 +3,7 @@ name: V2 UPDATE-README
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 9 * * *'
+    - cron: '10 9 * * *'           # каждый день в 12:10 по Москве
   push:
     branches: [ main ]
     paths:
@@ -11,11 +11,11 @@ on:
       - ".github/README_PARTS/5.MAIN_Article_*.md"
 
 permissions:
-  contents: write          # Обязательно!
+  contents: write          # обязательно для создания ветки и коммита
   pull-requests: write
 
 jobs:
-  # 1. Подготовка (просто информация + checkout)
+  # 1. Подготовка
   prepare:
     runs-on: ubuntu-latest
     name: Подготовка
@@ -29,13 +29,16 @@ jobs:
         with:
           fetch-depth: 0
 
-  # 2. Настройка Git (отдельный шаг — красиво в логах)
+  # 2. Настройка Git — теперь работает (есть checkout!)
   setup-git:
     needs: prepare
     runs-on: ubuntu-latest
     name: Настройка Git
     steps:
-      - name: Конфиг Git
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Конфигурация Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,23 +53,59 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Сборка README.md
+      - name: Сборка README.md из частей
         run: |
-          # ← твой полный скрипт сборки (тот же, что был раньше) ←
           PARTS=".github/README_PARTS"
           OUTPUT="README.md"
-          # ... весь твой код сборки ...
-          echo "README.md собран!"
 
-      # Ключевое: сохраняем только один файл как артефакт
-      - name: Сохранить собранный README
+          HEADER="$PARTS/1.HEADER.md"
+          DESCRIPTION="$PARTS/2.DESCRIPTION.md"
+          DONATION="$PARTS/3.DONATION.md"
+          NAV="$PARTS/4.NAV.md"
+          MAIN_Header="$PARTS/5.MAIN_Header.md"
+          FOOTER="$PARTS/6.FOOTER.md"
+
+          MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
+
+          echo "Найдены статьи:"
+          echo "$MAIN_ARTICLES" | sed 's/^/  • /' || true
+
+          for file in "$HEADER" "$DESCRIPTION" "$DONATION" "$NAV" "$MAIN_Header" "$FOOTER"; do
+            [[ -f "$file" ]] || { echo "ОШИБКА: не найден $file"; exit 1; }
+          done
+
+          echo "Собираем $OUTPUT …"
+          > "$OUTPUT"
+
+          cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$DESCRIPTION"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$DONATION"      >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$NAV"           >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$MAIN_Header"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+
+          if [[ -n "$MAIN_ARTICLES" ]]; then
+            for article in $MAIN_ARTICLES; do
+              echo "Добавляем $(basename "$article")"
+              cat "$article" >> "$OUTPUT"
+              echo -e "\n\n" >> "$OUTPUT"
+            done
+          else
+            echo "Внимание: статей не найдено"
+          fi
+
+          cat "$FOOTER" >> "$OUTPUT"
+          echo -e "\n" >> "$OUTPUT"
+
+          echo "README.md успешно собран!"
+
+      - name: Сохранить как артефакт
         uses: actions/upload-artifact@v4
         with:
           name: compiled-readme
           path: README.md
           retention-days: 1
 
-  # 4. Создание PR — без запуска новой VM с нуля!
+  # 4. Создание Pull Request
   create-pull-request:
     needs: compile-readme
     runs-on: ubuntu-latest
@@ -76,38 +115,28 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Берём готовый файл из предыдущего job-а
       - name: Скачать собранный README.md
         uses: actions/download-artifact@v4
         with:
           name: compiled-readme
           path: .
 
-      # Теперь файл снова в корне и видим для create-pull-request
       - name: Создать Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: regenerate README from parts"
-          title: "Обновлён README из частей (автосборка)"
+          title: "Обновлён README из частей (авто)"
           body: |
             Автоматическая сборка README.md из файлов в `.github/README_PARTS/`
 
             Триггер: ${{ github.event_name }}
-            Коммит: ${{ github.sha }}
+            SHA: ${{ github.sha }}
 
-            Что изменилось:
-            • Заголовок, описание, донаты
-            • Навигация
-            • Все статьи `5.MAIN_Article_*.md` (добавлены/обновлены/отсортированы)
-            • Футер
-
-            Можно мержить одной кнопкой — чистая автогенерация.
-
-          branch: readme/auto-update            # временная ветка
+            Можно мержить одной кнопкой
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          branch: readme/auto-update
           base: main
           delete-branch: true
-          labels: |
-            automated
-            documentation
+          labels: automated,documentation
           add-paths: README.md
