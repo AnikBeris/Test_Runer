@@ -182,8 +182,8 @@ jobs:
 
 
       # 2. Включаем автомерж для только что созданного PR
-      - name: Включить автомерж PR
-        if: steps.cpr.outputs.pull-request-operation == 'created'  # Только если PR создан (не обновлён)
+      - name: Включить автомерж PR 
+        if: steps.cpr.outputs.pull-request-operation == 'created'
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
