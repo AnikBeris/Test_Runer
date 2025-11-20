@@ -7,18 +7,6 @@
   <strong><-------</strong>
 </p>
 
-
-
-<p align="center">
-  <strong>-------></strong> 
-  <a href="../../docs/README.en.md">English</a> | 
-  <a href="/README.md">Russian</a> 
-  <strong><-------</strong>
-</p>
-
-
-
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../media/logo-dark.png">
@@ -40,41 +28,37 @@
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-Article on installation and configuration of 3x-ui + SSL certificate
+Article on Installing and Configuring 3x-ui + SSL Certificate
 </h1>
 
 <h2 align="center">
-> 💡 The material is intended for experienced users.
+> 💡 This material is intended for advanced users.
 </h2>
 
-
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
 ⚠️ Disclaimer ⚠️
 </h2>
 
 <p align="center">
-  The author assumes no responsibility for any possible consequences of using this project.<br>
+  The author is not responsible for any potential consequences arising from the use of this project.<br>
   Use at your own risk.
 </p>
 
 <details align="center"> 
-    <summary>⚠️full text⚠️</summary>
+    <summary>⚠️ Full Text ⚠️</summary>
     
-Use this build at your own risk.
+Use this image at your own risk.
 
-1. By using it, you automatically agree to the terms of the attached license agreement.
+1. By using it, you automatically agree to the terms of the associated license agreement.
 
-2. The author makes no warranties, explicit or implied, regarding the accuracy, completeness, or suitability of this build for any specific purposes.
-3. The author assumes no responsibility for any losses, including but not limited to direct, incidental, consequential, indirect or special damages arising from the use or inability to use this build or its accompanying documentation, even if the possibility of such damages was previously disclosed.
+2. The author provides no warranties, expressed or implied, regarding the accuracy, completeness, or suitability of this image for any specific purpose. 
+3. The author is not liable for any damages, including but not limited to direct, indirect, incidental, consequential, or special damages, arising from the use or inability to use this image or its accompanying documentation, even if the possibility of such damages was previously warned.
 
-4. By using this build, you confirm and accept all risks associated with its use. Furthermore, you agree that the author cannot be held responsible for any issues or consequences arising from its use.
+4. By using this image, you acknowledge and accept all risks associated with its use. Furthermore, you agree that the author cannot be held responsible for any issues or consequences resulting from its usage.
 
 </details> 
 
@@ -85,7 +69,7 @@ Use this build at your own risk.
 </h3>
 
 <p align="center"> 
-If this project was useful to you, you can rate it by giving it a star.:star2: 
+If you found this project helpful, you can show your appreciation by giving it a star.:star2: 
 </p>
 
 <p align="center">
@@ -97,10 +81,8 @@ If this project was useful to you, you can rate it by giving it a star.:star2:
   </a>
 </p>
 
-
-
 <h4 align="center"> 
-Donations are warmly welcomed, no matter how small they are, and thank you so much. 😌
+Donations are warmly welcomed, no matter how small, and thank you very much. 😌 
 </h1>
 
 <div align="center">
@@ -127,29 +109,14 @@ Donations are warmly welcomed, no matter how small they are, and thank you so mu
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
 
-
-
 ## 📚 Table of Contents
 
 - [Introduction](#-introduction)
 
-
-
-
 ## 🔗 Useful Links
 
-  
-
-
-
-
-
-
-
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
   <a href="#-table-of-contents"> ⬆️ Back to Top </a> 
@@ -159,7 +126,7 @@ Donations are warmly welcomed, no matter how small they are, and thank you so mu
 Technical Requirements
 </h1>
 
-## 📊 Recommended Operating Systems
+## 📊 Recommended OS
 
 <details> 
     <summary>⚙️ Expand Description</summary>
@@ -176,39 +143,34 @@ Technical Requirements
 - AlmaLinux 8.0+
 - Rocky Linux 8+
 - Oracle Linux 8+
-- OpenSUSE Tubleweed
+- OpenSUSE Tumbleweed
 - Amazon Linux 2023
 - Windows x64
 
-</details> 
-
-
+</details>
 
 ## 📊 Supported Architectures and Devices
 
 <details> 
     <summary>⚙️ Expand Description</summary>
 
-Our platform provides compatibility with a wide range of architectures and devices, ensuring flexibility across various computing environments. Below are the primary architectures we support:
+Our platform offers compatibility with a wide range of architectures and devices, ensuring flexibility across various computing environments. Below are the key architectures we support:
 
-- **amd64:** This widespread architecture is standard for personal computers and servers, ensuring seamless operation of most modern operating systems.
+- **amd64:** A widely used architecture standard for personal computers and servers.
 
-- **x86 / i386:** Extensively used in desktop computers and laptops. The architecture is widely supported by numerous operating systems and applications, including but not limited to `Windows, macOS, and Linux`.
+- **x86 / i386:** Commonly used in desktops and laptops with broad support across numerous operating systems and applications, including `Windows, macOS, and Linux`.
 
-- **armv8 / arm64 / aarch64:** Designed for modern mobile and embedded devices, such as smartphones and tablets. Examples of devices include `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`, and others.
+- **armv8 / arm64 / aarch64:** Designed for modern mobile and embedded devices like smartphones and tablets. Examples include `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`, among others.
 
-- **armv7 / arm / arm32:** Serves as the architecture for older mobile and embedded devices. Still widely used in devices like the `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, and others.
+- **armv7 / arm / arm32:** Used for older mobile and embedded devices, still prevalent in devices like `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, among others.
 
-- **armv6 / arm / arm32:** Focused on very old embedded devices. Although less common, it is still employed, such as in the `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
+- **armv6 / arm / arm32:** Targets very old embedded devices and is less common but still found in `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
 
-- **armv5 / arm / arm32:** An older architecture primarily associated with early embedded systems. Rarely seen today, but might be utilized in legacy devices like early versions of `Raspberry Pi` and some old smartphones.
+- **armv5 / arm / arm32:** An older architecture mostly associated with early embedded systems but can still be used in legacy devices.
 
-- **s390x:** This architecture is commonly used in IBM mainframes, providing high performance and reliability for enterprise workloads.
+- **s390x:** Frequently used in IBM mainframes, ensuring high reliability for enterprise workloads.
 
-</details> 
-
-
-
+</details>
 
 ## 📊 Supported Languages
 
@@ -228,35 +190,28 @@ Our platform provides compatibility with a wide range of architectures and devic
 - Turkish
 - Português (Brazil)
 
-</details> 
+</details>
 
-
-
-
-## 📊 Functions || Features
+## 📊 Features || Highlights
 
 <details> 
     <summary>⚙️ Expand Description</summary>
 
 - System status monitoring
-- Search across all incoming connections and clients
-- Theme: `dark/light mode`
-- Support for multi-user and multi-protocol
-- Protocol support: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- Native XTLS protocol support: `RPRX-Direct, Vision, REALITY`
-- Traffic statistics, traffic limit, expiration time restriction
+- Visibility of all incoming connections and clients
+- Theme support: `dark / light`
+- Multi-user and multi-protocol support
+- Protocols supported: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
+- Native support for XTLS protocols: `RPRX-Direct, Vision, REALITY`
+- Traffic statistics, traffic limits, and expiration time settings
 - Customizable `Xray` configuration templates
-- HTTPS access panel support `(custom domain + SSL certificate)`
-- One-click SSL certificate request and automatic renewal
-- For advanced configuration options, see the panel
-- Fixed `API routes` (user settings created via `API`)
-- Configuration change support through various parameters available on the panel
-- Database export/import support through the panel
+- HTTPS access panel support with `custom domain + SSL certificate`
+- One-click request for `SSL certificate` and auto-renewal
+- Advanced configuration parameters via the panel
+- Fixed `API routes` for user settings through `API`
+- Export/import database support via the panel
 
-</details> 
-
-
-
+</details>
 
 <h1 align="center">
 ⚠️ Disclaimer ⚠️
@@ -265,63 +220,56 @@ Our platform provides compatibility with a wide range of architectures and devic
 <details align="center"> 
     <summary> ⚙️ Expand Description </summary>
 
-Use this build at your own risk. By using it, you automatically agree to the terms of the attached license agreement.
+Use this image at your own risk. By using it, you automatically agree to the terms of the associated license agreement.
 
-The author makes no warranties, explicit or implied, regarding the accuracy, completeness, or suitability of this build for any specific purposes. The author assumes no responsibility for any losses, including but not limited to direct, incidental, consequential, indirect, or special damages arising from the use or inability to use this build or its accompanying documentation, even if the possibility of such damages was previously disclosed.
+The author provides no warranties, expressed or implied, regarding the accuracy, completeness, or fitness of this image for any particular purpose. The author is not liable for any damages, including direct, indirect, incidental, consequential, or special damages, arising from the use or inability to use this image or its documentation.
 
-By using this build, you confirm and accept all risks associated with its use. Furthermore, you agree that the author cannot be held responsible for any issues or consequences arising from its use.
+By using this image, you assume all risks associated with its application. You agree that the author is not liable for any issues or consequences resulting from its usage.
 
-</details> 
-
+</details>
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h2 align="center">
-  <a href="#-table-of-contents">⬆️ Back to Top</a> 
+  <a href="#-table-of-contents">⬆️ Back to Top </a> 
 </h2>
 
-
 <h1 align="center"> 
-SSL Certificate from Cloudflare
+Cloudflare SSL Certificate
 </h1>
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloudflare " width="50%">
+  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
 
-The management script includes a built-in feature for requesting an `SSL certificate` via `Cloudflare`. To obtain a certificate using this script, you need:
-
+The management script includes a built-in function to request an `SSL certificate` via `Cloudflare`. To obtain the certificate using this script, you need:
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-- Email registered with `Cloudflare`
-- Global API Key for Cloudflare
+- An email registered with `Cloudflare`
+- Cloudflare Global API Key
 - The domain name must be directed (registered in DNS) to the current server via `Cloudflare`
 
+## How to Obtain Cloudflare Global API Key:
 
+1. Execute the command `x-ui` in the terminal, then choose `Cloudflare SSL Certificate`.
 
-## How to Obtain a Global API Key from Cloudflare:
+2. Visit the link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-1. In the terminal, execute the `x-ui` command, then select `Cloudflare SSL Certificate`.
-
-2. Follow the link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
-
-3. Click `View Global API Key` (see screenshot below):
+3. Click `View Global API Key` (as shown in the screenshot below):
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
 </div>
 
-4. You may need to authenticate again. After that, the key will be displayed (see screenshot below):
+4. Authentication may be required again. After that, the key will be displayed (see the screenshot below):
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
 </div>
-
 
 When using, simply enter your domain, `email`, and `API KEY`. An example is shown below:
 
@@ -329,24 +277,19 @@ When using, simply enter your domain, `email`, and `API KEY`. An example is show
   <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
 </div>
 
-</details> 
-
-
+</details>
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h2 align="center">
-  <a href="#-table-of-contents">⬆️ Back to Top</a> 
+  <a href="#-table-of-contents">⬆️ Back to Top </a> 
 </h2>
-
 
 <h1 align="center"> 
 Installing 3X-UI
 </h1>
-
 
 # 1. Quick Installation of 3X
 
@@ -368,14 +311,13 @@ bash ./self_signed_certificate.sh
 
 # 2. Step-by-step Installation of 3X
 
-
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
 # 📊 Installing Required Packages
 
 1. System Update
-Before proceeding with the installation, make sure your system is updated. Execute the following commands:
+Before beginning the installation, ensure that your system is updated. Execute the following commands:
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
@@ -389,25 +331,22 @@ Ensure that your server has the necessary packages installed:
 apt-get install wget curl openssl qrencode systemd -y
 ```
 
-
-
 ## Installing the 3X-UI Panel
 
-To install the panel on the server, execute the script with the command:
+To install the panel on the server, run the script with the following command:
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-During the installation, the script will ask the question:
+During installation, the script will ask:
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-Answer `y` if you want to set the port yourself, or `n` if the script will set the port automatically.
-Do not set standard ports `22, 80, 8080`. It is recommended to choose any other, such as `8181`.
-
+Answer `y` if you want to set the port yourself, or `n` to let the script set the port automatically.
+Do not use standard ports like `22, 80, 8080`. It's recommended to select another, such as `8181`.
 
 ```sh
 Username: 3favnjd8
@@ -421,13 +360,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-After completing these steps, the panel installation will be complete, and you can connect through the browser to the panel at the path
+After completing these steps, the panel installation will be complete, and you can access it via your browser using the following URL format:
 
 ```sh
-http://IP_address_of_your_server:port/WebBasePath(example: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://Your_Server_IP:Port/WebBasePath (example: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
 ```
 
-After entering the address in the browser, you will be taken to the panel login window, where you need to enter the username and password provided by the script earlier.
+Upon entering this URL in the browser, you'll be redirected to the login page. Enter the username and password previously provided by the script.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -435,11 +374,9 @@ After entering the address in the browser, you will be taken to the panel login 
 
 </details> 
 
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
-
 
 <h1 align="center"> 
 General Settings
@@ -456,61 +393,55 @@ Open the version selection and update panel.
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-Update the data files `GeoSite` and `GeoIP`.
+Update data files for `GeoSite` and `GeoIP`.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
 </div>
 
-</details> 
+</details>
 
-
-## Enable Subscriptions
+## Enabling Subscriptions
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-Go to `settings` and enable subscriptions.
+Go to `Settings` and enable subscriptions.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-When finished, click `save` and `restart the panel`.
+When done, click `Save` and `Restart the panel`.
 
 # X-Ray Settings
 
-## Base Connections
+## Basic Connections
 
-Go to `X-Ray Settings` -> select `General` -> open the `Base Connections` sub-section.
+Go to `X-Ray Settings` -> Select `General` -> Open the subsection `Basic Connections`.
 
-Set everything as shown in the image below:
+Set everything as shown in the image.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-When finished, click `save` and `restart Xray`.
+When done, click `Save` and `Restart Xray`.
 
-</details> 
-
-
-
-
+</details>
 
 ## DNS
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-
-Go to `X-Ray Settings` -> select `DNS` -> open the `DNS` sub-section.
+Go to `X-Ray Settings` -> Select `DNS` -> Open the subsection `DNS`.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-Click `Create DNS` and sequentially record the `DNS addresses`.
+Click "Create DNS" and sequentially add `DNS addresses`.
 
 ```bash
 tcp://8.8.8.8
@@ -528,25 +459,19 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-When finished, click `save` and `restart Xray`.
+When done, click `Save` and `Restart Xray`.
 
-</details> 
-
-
-
-
-
+</details>
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-Setting Up the First Connection
+Setting the First Connection
 </h1>
 
-## Now you can proceed to setting up the first connection.
+## Now, you can proceed to set up the first connection.
 
 Go to the side menu `"Connections"` -> Click the `"Add Connection"` button.
 
@@ -554,35 +479,21 @@ Go to the side menu `"Connections"` -> Click the `"Add Connection"` button.
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
 </div>
 
-
-
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
-
 <h1 align="center"> 📜 License </h1>
 <p align="center">
-  <strong> This project is distributed under </strong> 
+  <strong> This project is distributed under the </strong> 
   <a href="/LICENSE">Apache License</a> 
 </p>
 
 ---
 
 <h2 align="center"> 
-Documentation - Get Familiar with It
+Documentation. Please review it.
 </h2>
-
-<p align="center">
-  <strong>-------></strong> 
-  <a href="/README_en_EN.md"> English </a> | 
-  <a href="/README.md"> Russian </a> 
-  <strong><-------</strong>
-</p>
-
-
 
 <p align="center">
   <strong>-------></strong>
