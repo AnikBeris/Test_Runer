@@ -1,4 +1,15 @@
 <p align="center">
+  <strong>-------></strong>
+  <a href="/README.md">Русский</a> |
+  <a href="/docs/README.en.md">English</a> |
+  <a href="/docs/README.es.md">Spanish</a> |
+  <a href="/docs/README.zh.md">Chinese</a> |
+  <strong><-------</strong>
+</p>
+
+
+
+<p align="center">
   <strong>-------></strong> 
   <a href="../../docs/README.en.md">English</a> | 
   <a href="/README.md">Русский</a> 
@@ -570,5 +581,17 @@ tcp://9.9.9.9
   <a href="/README.md"> Русский </a> 
   <strong><-------</strong>
 </p>
+
+
+
+<p align="center">
+  <strong>-------></strong>
+  <a href="/README.md">Русский</a> |
+  <a href="/docs/README.en.md">English</a> |
+  <a href="/docs/README.es.md">Spanish</a> |
+  <a href="/docs/README.zh.md">Chinese</a> |
+  <strong><-------</strong>
+</p>
+
 
 
