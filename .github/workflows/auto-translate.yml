@@ -3,11 +3,11 @@ name: Translate Lessons
 on:
   workflow_dispatch: # ручной запуск
 
-  push:
-    branches:
-      - main
-    paths:
-      - "README.md"
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - "README.md"
 
 permissions:
   contents: write
