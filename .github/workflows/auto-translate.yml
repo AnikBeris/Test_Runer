@@ -68,10 +68,10 @@ jobs:
           path: docs
           merge-multiple: true
 
-      - name: Generate Test_Runer/docs/0.Language.md
+      - name: Generate .github/README_PARTS/0.Language.md
         run: |
-          mkdir -p Test_Runer/docs
-          OUTPUT="Test_Runer/docs/0.Language.md"
+          mkdir -p .github/README_PARTS
+          OUTPUT=".github/README_PARTS/0.Language.md"
 
           echo '<p align="center">' > $OUTPUT
           echo '  <strong>-------></strong>' >> $OUTPUT
@@ -83,6 +83,7 @@ jobs:
           for file in docs/README.*.md; do
             filename=$(basename "$file")
 
+            # пропускаем самую себя, если вдруг
             if [[ "$filename" == "0.Language.md" ]]; then
               continue
             fi
@@ -107,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LanguageIndex
-          path: Test_Runer/docs/0.Language.md
+          path: .github/README_PARTS/0.Language.md
 
   create-pr:
     needs: [translate, generate-language-file]
@@ -122,6 +123,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "docs: update translations + language index"
           title: "docs: update translations + language index"
           body: |
