@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - "README.md"  # Или пути к вашим урокам, напр. "lessons/*.md"
+      - "README.md"
 
 permissions:
   contents: write
@@ -19,16 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: ["spanish", "english", "chinese"]  # Добавьте нужные языки
+        language: ["spanish", "english", "chinese"]
         include:
           - language: "spanish"
             file: "README.es.md"
-#          - language: "russian"
-#            file: "README.ru.md"
           - language: "chinese"
             file: "README.zh.md"
           - language: "english"
             file: "README.en.md"
+
     steps:
       - uses: actions/checkout@v4
 
@@ -36,9 +35,9 @@ jobs:
         uses: FidelusAleksander/ai-translate-action@v1
         id: translate
         with:
-          text-file: "README.md"  # Исходный файл для перевода
+          text-file: "README.md"
           target-language: ${{ matrix.language }}
-          custom-instructions: "Технические термины, такие как «самозаверяющий сертификат», используйте на английском языке. Не переводите блоки кода или URL-адреса."
+          custom-instructions: "Технические термины используйте только на английском. Не переводите блоки кода или URL."
 
       - name: Save Translation
         run: |
@@ -47,37 +46,90 @@ jobs:
         env:
           TRANSLATED_TEXT: ${{ steps.translate.outputs.translated-text }}
 
-      - name: Fix media paths for docs/* # 1) сначала заменяем только ./media/ # 2) затем нормализуем любые ../.../media/
+      - name: Fix media paths
         run: |
           sed -i 's|\.\/media/|../media/|g' docs/${{ matrix.file }}
-          sed -i -E 's|(\.\./)+media/|../media/|g' docs/${{ matrix.file }} 
-          
+          sed -i -E 's|(\.\./)+media/|../media/|g' docs/${{ matrix.file }}
+
       - name: Upload Translation Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.file }}
           path: docs/${{ matrix.file }}
 
-  create-pr:
+  generate-language-file:
     needs: translate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: docs
+          merge-multiple: true
+
+      - name: Generate Test_Runer/docs/0.Language.md
+        run: |
+          mkdir -p Test_Runer/docs
+          OUTPUT="Test_Runer/docs/0.Language.md"
+
+          echo '<p align="center">' > $OUTPUT
+          echo '  <strong>-------></strong>' >> $OUTPUT
+
+          # Русский (основной README.md)
+          echo '  <a href="/README.md">Русский</a> |' >> $OUTPUT
+
+          # Переводы из docs/
+          for file in docs/README.*.md; do
+            filename=$(basename "$file")
+
+            if [[ "$filename" == "0.Language.md" ]]; then
+              continue
+            fi
+
+            lang=$(echo "$filename" | sed -E 's/README\.([a-z]+)\.md/\1/')
+
+            case "$lang" in
+              en) langName="English" ;;
+              es) langName="Spanish" ;;
+              zh) langName="Chinese" ;;
+              ru) langName="Русский" ;;
+              *) langName="$lang" ;;
+            esac
+
+            echo "  <a href=\"/docs/$filename\">$langName</a> |" >> $OUTPUT
+          done
+
+          echo '  <strong><-------</strong>' >> $OUTPUT
+          echo '</p>' >> $OUTPUT
+
+      - name: Upload Language Index Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LanguageIndex
+          path: Test_Runer/docs/0.Language.md
+
+  create-pr:
+    needs: [translate, generate-language-file]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          path: docs
+          path: .
           merge-multiple: true
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "docs: update translations of lessons"
-          title: "docs: update translations of lessons"
+          commit-message: "docs: update translations + language index"
+          title: "docs: update translations + language index"
           body: |
-            This PR updates translations of the lessons using AI Translate Action.
-
-            Changes were automatically generated using the [ai-translate-action](https://github.com/FidelusAleksander/ai-translate-action).
+            This PR updates translations and regenerates language index automatically.
           branch: docs/update-translations
-          add-paths: "docs/README*"
+          add-paths: |
+            docs/README*
+            .github/README_PARTS/0.Language.md
           delete-branch: true
           labels: |
             documentation
