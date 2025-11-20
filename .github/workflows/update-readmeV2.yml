@@ -141,13 +141,13 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: chore: regenerate README from parts (авто)
+          commit-message: "chore: regenerate README from parts (авто)"
           branch: update/readme-${{ github.run_id }}
-          title: chore: regenerate README from parts (авто)
+          title: "chore: regenerate README from parts (авто)"
           body: Автоматически собранный README из .github/README_PARTS
           labels: automated
           base: main
-          files: README.md
+          add-paths: README.md
 
       # 2) Автомерж — запускаем только если create-pull-request создал/нашёл PR
       - name: Auto-merge PR (pascalgn)
