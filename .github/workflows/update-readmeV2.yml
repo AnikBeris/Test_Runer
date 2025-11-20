@@ -154,15 +154,21 @@ jobs:
         if: ${{ steps.create_pr.outputs.pull-request-number != '' }}
         uses: pascalgn/automerge-action@v0.16.4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_LABELS: "automated"
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"
-          MERGE_DELETE_BRANCH: "true"
-          MERGE_REMOVE_LABELS: "automated"
-          UPDATE_METHOD: "rebase"
-          UPDATE_LABELS: "automated"
-          MERGE_FILTER_AUTHOR: "github-actions[bot]"
-          MERGE_RETRIES: "3"
-          MERGE_RETRY_SLEEP: "10000"
-          MERGE_FORKS: "false"
+          # Конфигурация мержа (актуальные параметры v0.16.4)
+          MERGE_LABELS: "automated"                    # Метка, которая триггерит мерж (было MERGE_LABEL — убрали!)
+          MERGE_METHOD: "squash"                       # Squash для чистой истории
+          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"  # Кастомное сообщение
+          MERGE_DELETE_BRANCH: "true"                  # Удаляем ветку после мержа
+          MERGE_REMOVE_LABELS: "automated"             # Убираем метку после мержа
+
+          # Конфигурация обновления PR (rebase на base)
+          UPDATE_METHOD: "rebase"                      # Rebase для обхода "up to date"
+          UPDATE_LABELS: "automated"                   # Та же метка для обновления
+
+          # Фильтры (только для твоего бота)
+          MERGE_FILTER_AUTHOR: "github-actions[bot]"   # Только PR от бота
+
+          # Дополнительно (опционально, для надёжности)
+          MERGE_RETRIES: "3"                           # 3 попытки, если checks висят
+          MERGE_RETRY_SLEEP: "10000"                   # 10 сек между попытками
+          MERGE_FORKS: "false"                         # Не мержим форки (для безопасности)
