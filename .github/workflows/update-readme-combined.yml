@@ -97,12 +97,13 @@ jobs:
           OUTPUT="README.md"
 
           # Ожидаемые обязательные части — при переносе проекта убедитесь, что такие файлы есть
-          HEADER="$PARTS/1.HEADER.md"          # шапка проекта
+          LANGUAGE="$PARTS/0.Language.md"       # шапка с переводами
+          HEADER="$PARTS/1.HEADER.md"           # шапка проекта
           DESCRIPTION="$PARTS/2.DESCRIPTION.md" # краткое описание
-          DONATION="$PARTS/3.DONATION.md"      # донаты/поддержка
-          NAV="$PARTS/4.NAV.md"                # навигация/ссылки
+          DONATION="$PARTS/3.DONATION.md"       # донаты/поддержка
+          NAV="$PARTS/4.NAV.md"                 # навигация/ссылки
           MAIN_Header="$PARTS/5.MAIN_Header.md" # заголовок раздела статей
-          FOOTER="$PARTS/6.FOOTER.md"          # футер/подвал
+          FOOTER="$PARTS/6.FOOTER.md"           # футер/подвал
 
           # Статьи: 5.MAIN_Article_*.md (сортируются по версии/числу)
           MAIN_ARTICLES=$(ls "$PARTS"/5.MAIN_Article_*.md 2>/dev/null | sort -V || echo "")
@@ -120,6 +121,7 @@ jobs:
 
           # Собираем README.md последовательно с отступами
           > "$OUTPUT"
+          cat "$LANGUAGE"      >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$HEADER"        >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$DESCRIPTION"   >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
           cat "$DONATION"      >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
@@ -129,15 +131,16 @@ jobs:
           if [[ -n "$MAIN_ARTICLES" ]]; then
             for article in $MAIN_ARTICLES; do
               echo "Appending article: $(basename "$article")"
-              cat "$article" >> "$OUTPUT"
-              echo -e "\n\n" >> "$OUTPUT"
+              cat "$article"   >> "$OUTPUT"
+              echo -e "\n\n"   >> "$OUTPUT"
             done
           else
             echo "Warning: no main articles found"
           fi
 
-          cat "$FOOTER" >> "$OUTPUT"
-          echo -e "\n" >> "$OUTPUT"
+          cat "$FOOTER"       >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          cat "$LANGUAGE"     >> "$OUTPUT"; echo -e "\n\n" >> "$OUTPUT"
+          
           echo "README.md built successfully."
 
       - name: Upload compiled README as artifact
