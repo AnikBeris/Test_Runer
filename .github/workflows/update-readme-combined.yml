@@ -29,6 +29,12 @@ on:
       - "README.md"                        # при изменении README — запускается перевод
       - ".github/README_PARTS/*"           # при изменении частей — запускается сборка README
       - ".github/README_PARTS/5.MAIN_Article_*.md"
+# Важно: полностью игнорируем изменения только в 0.Language.md
+    paths-ignore:
+      - ".github/README_PARTS/0.Language.md"
+
+
+
 
 # Права, необходимые для создания веток, PR и записи файлов
 permissions:
@@ -261,7 +267,7 @@ jobs:
           name: LanguageIndex
           path: .github/README_PARTS/0.Language.md
 
-    # -------------------
+  # -------------------
   # Создание Pull Request — с гарантированным восстановлением структуры файлов
   # -------------------
   create-pull-request:
@@ -346,17 +352,17 @@ jobs:
             docs/README*.md
             .github/README_PARTS/0.Language.md
 
-      # 5. Автомердж, если PR создан
-      - name: Auto-merge PR (if created)
-        if: ${{ steps.create_pr.outputs.pull-request-number != '' }}
-        uses: pascalgn/automerge-action@v0.16.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_LABELS: "automated"
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "chore: regenerate README and update translations (авто)"
-          MERGE_DELETE_BRANCH: "true"
-          UPDATE_METHOD: "rebase"
-          MERGE_RETRIES: "3"
-          MERGE_RETRY_SLEEP: "10000"
-          MERGE_FORKS: "false"
+#      # 5. Автомердж, если PR создан
+#      - name: Auto-merge PR (if created)
+#        if: ${{ steps.create_pr.outputs.pull-request-number != '' }}
+#        uses: pascalgn/automerge-action@v0.16.4
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          MERGE_LABELS: "automated"
+#          MERGE_METHOD: "squash"
+#          MERGE_COMMIT_MESSAGE: "chore: regenerate README and update translations (авто)"
+#          MERGE_DELETE_BRANCH: "true"
+#          UPDATE_METHOD: "rebase"
+#          MERGE_RETRIES: "3"
+#          MERGE_RETRY_SLEEP: "10000"
+#          MERGE_FORKS: "false"
