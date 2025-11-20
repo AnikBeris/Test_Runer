@@ -47,6 +47,11 @@ jobs:
         env:
           TRANSLATED_TEXT: ${{ steps.translate.outputs.translated-text }}
 
+      - name: Fix media paths for docs/* # 1) сначала заменяем только ./media/ # 2) затем нормализуем любые ../.../media/
+        run: |
+          sed -i 's|\.\/media/|../media/|g' docs/${{ matrix.file }}
+          sed -i -E 's|(\.\./)+media/|../media/|g' docs/${{ matrix.file }} 
+          
       - name: Upload Translation Artifact
         uses: actions/upload-artifact@v4
         with:
