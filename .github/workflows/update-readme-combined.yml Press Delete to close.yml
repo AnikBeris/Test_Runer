@@ -258,8 +258,8 @@ jobs:
           name: LanguageIndex
           path: .github/README_PARTS/0.Language.md
 
-  # -------------------
-  # Создание Pull Request: скачиваем артефакты и создаём PR если есть изменения
+    # -------------------
+  # Создание Pull Request — с гарантированным восстановлением структуры файлов
   # -------------------
   create-pull-request:
     needs: generate-language-file
@@ -270,45 +270,81 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download artifacts (compiled README, translations, language index)
+      # 1. Скачиваем ВСЕ артефакты в одну временную папку
+      - name: Download all artifacts into temp folder
         uses: actions/download-artifact@v4
         with:
-          path: .
+          path: downloaded-artifacts
           merge-multiple: true
 
-      - name: Show workspace contents for debug
+      # 2. Восстанавливаем правильную структуру папок и перемещаем файлы куда надо
+      - name: Restore correct file structure
         run: |
-          echo "Workspace files before creating PR:"
-          ls -la
-          echo "Show .github/README_PARTS:"
-          ls -la .github/README_PARTS || true
-          echo "Show docs/:"
-          ls -la docs || true
+          echo "Содержимое downloaded-artifacts:"
+          ls -la downloaded-artifacts || true
+          find downloaded-artifacts -type f
 
-      - id: create_pr
-        name: Create Pull Request (peter-evans/create-pull-request)
+          # Создаём нужные директории
+          mkdir -p docs .github/README_PARTS
+
+          # Перемещаем/копируем файлы независимо от того, где они лежали в артефактах
+          # — README.md
+          find downloaded-artifacts -name "README.md" -exec cp -f {} ./README.md \; 2>/dev/null || true
+
+          # — Переводы (README.*.md)
+          find downloaded-artifacts -name "README.*.md" -exec cp -f {} docs/ \; 2>/dev/null || true
+
+          # — Файл индекса языков (может быть как 0.Language.md, так и уже в .github/README_PARTS/)
+          find downloaded-artifacts -name "0.Language.md" | while read file; do
+            if [[ -f "$file" ]]; then
+              # Если файл уже в правильной папке — просто копируем структуру
+              cp --parents "$file" . 2>/dev/null || cp "$file" .github/README_PARTS/0.Language.md
+            fi
+          done
+
+          # На случай, если кто-то загрузил уже с правильной структурой
+          rsync -av downloaded-artifacts/ . --ignore-existing >/dev/null 2>&1 || true
+
+          echo "Финальная структура рабочей директории:"
+          tree -L 4 . || find . -type f -name "*.md" | head -20
+
+      # 3. Проверяем, что всё на месте (для логов)
+      - name: Verify required files exist
+        run: |
+          echo "Проверяем наличие ключевых файлов:"
+          [[ -f README.md ]]                  && echo "README.md" || echo "README.md НЕ НАЙДЕН!"
+          [[ -f .github/README_PARTS/0.Language.md ]] && echo ".github/README_PARTS/0.Language.md" || echo "0.Language.md НЕ НАЙДЕН!"
+          ls -1 docs/README.*.md 2>/dev/null | sed 's/^/  → /' || echo "  Нет переводов в docs/"
+
+      # 4. Создаём PR — теперь пути гарантированно правильные
+      - name: Create Pull Request
+        id: create_pr
         uses: peter-evans/create-pull-request@v6
         with:
-          # token нужен для создания ветки, коммита и PR
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: regenerate README and update translations (авто)"
           title: "chore: regenerate README and update translations (авто)"
           body: |
-            Автоматически: пересобран README, обновлены переводы и индекс языков.
+            Автоматически пересобран README.md из частей
+            Обновлены переводы (EN, ES, ZH)
+            Обновлён индекс языков в `.github/README_PARTS/0.Language.md`
+
+            Запущено workflow: ${{ github.workflow }}
+            Run ID: ${{ github.run_id }}
           branch: ${{ env.BRANCH_PREFIX }}${{ github.run_id }}
           base: main
-          # Явно указываем пути, которые нужно добавить в PR
-          add-paths: |
-            README.md
-            docs/README*
-            .github/README_PARTS/0.Language.md
           delete-branch: true
           labels: |
             automated
             documentation
             translation
+          add-paths: |
+            README.md
+            docs/README*.md
+            .github/README_PARTS/0.Language.md
 
-      - name: Auto-merge PR (pascalgn/automerge-action) — только если PR создан
+      # 5. Автомердж, если PR создан
+      - name: Auto-merge PR (if created)
         if: ${{ steps.create_pr.outputs.pull-request-number != '' }}
         uses: pascalgn/automerge-action@v0.16.4
         env:
@@ -317,10 +353,7 @@ jobs:
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "chore: regenerate README and update translations (авто)"
           MERGE_DELETE_BRANCH: "true"
-          MERGE_REMOVE_LABELS: "automated"
           UPDATE_METHOD: "rebase"
-          UPDATE_LABELS: "automated"
-          MERGE_FILTER_AUTHOR: "github-actions[bot]"
           MERGE_RETRIES: "3"
           MERGE_RETRY_SLEEP: "10000"
           MERGE_FORKS: "false"
