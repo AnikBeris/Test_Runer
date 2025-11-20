@@ -1,9 +1,13 @@
 <p align="center">
   <strong>-------></strong> 
   <a href="/README_en_EN.md">English</a> | 
-  <a href="/README.md">Русский</a> 
+  <a href="/README.md">Russian</a> 
   <strong><-------</strong>
 </p>
+
+
+
+
 
 <p align="center">
   <picture>
@@ -28,12 +32,13 @@
 
 
 <h1 align="center"> 
-Installation and Configuration Guide for 3x-ui + SSL Certificate
+Article on Installing and Configuring 3x-ui + SSL Certificate
 </h1>
 
 <h2 align="center">
-> 💡 This material is intended for advanced users.
+> 💡 Material intended for advanced users.
 </h2>
+
 
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
@@ -45,21 +50,21 @@ Installation and Configuration Guide for 3x-ui + SSL Certificate
 </h2>
 
 <p align="center">
-  The author is not responsible for any potential consequences of using this project.<br>
-  Use it at your own risk.
+  The author is not responsible for any possible consequences resulting from the use of this project.<br>
+  Use at your own risk.
 </p>
 
 <details align="center"> 
-    <summary>⚠️ Full text ⚠️</summary>
+    <summary>⚠️Full Text⚠️</summary>
     
 Use this image at your own risk.
 
-1. By using it, you automatically agree to the associated license agreement terms.
+1. By using it, you automatically agree to the terms of the associated licensing agreement.
 
-2. The author provides no guarantees, express or implied, regarding the accuracy, completeness, or suitability of this image for any particular purposes. 
-3. The author is not liable for any losses, including but not limited to direct, indirect, incidental, consequential, or special damages, arising from the use or inability to use this image or accompanying documentation, even if advised of the possibility of such damages.
+2. The author makes no guarantees, express or implied, regarding the accuracy, completeness, or suitability of this image for any specific purposes. 
+3. The author is not liable for any losses, including but not limited to direct, indirect, incidental, consequential, or special damages arising from the use or inability to use this image or associated documentation, even if such damages were anticipated.
 
-4. By using this image, you acknowledge and assume all risks associated with its use. Additionally, you agree that the author cannot be held accountable for any issues or consequences resulting from its use.
+4. By using this image, you acknowledge and accept all risks associated with its application. Moreover, you agree that the author cannot be held accountable for any problems or consequences stemming from its use.
 
 </details> 
 
@@ -70,7 +75,7 @@ Use this image at your own risk.
 </h3>
 
 <p align="center"> 
-If this project was useful to you, feel free to give it a star.:star2: 
+If this project has been useful for you, you can rate it by giving it a star.:star2: 
 </p>
 
 <p align="center">
@@ -85,7 +90,7 @@ If this project was useful to you, feel free to give it a star.:star2:
 
 
 <h4 align="center"> 
-Donations are warmly welcomed, no matter how small, and a big thank you. 😌 
+Donations are warmly welcomed, no matter how small, and thank you so much. 😌 
 </h1>
 
 <div align="center">
@@ -104,7 +109,7 @@ Donations are warmly welcomed, no matter how small, and a big thank you. 😌
 ---
 
 <p align="center">
-  <sub> Thank you for your attention to the project and for your support 💙 </sub>
+  <sub> Thank you for your attention to the project and your support 💙 </sub>
 </p>
 
 ---
@@ -114,7 +119,7 @@ Donations are warmly welcomed, no matter how small, and a big thank you. 😌
 
 
 
-## 📚 Table of Contents
+## 📚 Contents
 
 - [Introduction](#-introduction)
 
@@ -134,14 +139,14 @@ Donations are warmly welcomed, no matter how small, and a big thank you. 😌
 
 
 <h2 align="center">
-  <a href="#-table-of-contents"> ⬆️ Back to Top </a> 
+  <a href="#-contents"> ⬆️ Up </a> 
 </h2>
 
 <h1 align="center"> 
 Technical Requirements
 </h1>
 
-## 📊 Recommended OS
+## 📊 Recommended Operating Systems
 
 <details> 
     <summary>⚙️ Expand Description</summary>
@@ -171,21 +176,21 @@ Technical Requirements
 <details> 
     <summary>⚙️ Expand Description</summary>
 
-Our platform offers compatibility with a wide range of architectures and devices, providing flexibility across various computing environments. Below are the key architectures we support:
+Our platform offers compatibility with a wide range of architectures and devices, ensuring flexibility in various computing environments. Below are the main architectures we support:
 
-- **amd64:** This popular architecture is standard for personal computers and servers, supporting seamless operation for most modern operating systems.
+- **amd64:** This widespread architecture is standard for personal computers and servers, ensuring seamless operation of most modern operating systems.
 
-- **x86 / i386:** Widely used in desktop computers and laptops. The architecture has extensive support from numerous OSs and applications, including `Windows, macOS, and Linux`.
+- **x86 / i386:** Widely used in desktops and laptops. The architecture enjoys broad support from numerous operating systems and applications, including but not limited to `Windows, macOS, and Linux`.
 
-- **armv8 / arm64 / aarch64:** Designed for modern mobile and embedded devices, such as smartphones and tablets. Example devices: `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS` and others.
+- **armv8 / arm64 / aarch64:** Designed for modern mobile and embedded devices such as smartphones and tablets. Device examples: `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`, and others.
 
-- **armv7 / arm / arm32:** Serves as the architecture for older mobile and embedded devices. Still widely used in devices like `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, among others.
+- **armv7 / arm / arm32:** Serves as the architecture for older mobile and embedded devices. Still widely used in devices like `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, and others.
 
-- **armv6 / arm / arm32:** Focused on very old embedded devices. Though less common, still employed in devices such as `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
+- **armv6 / arm / arm32:** Geared towards very old embedded devices. While less common, still applicable, for example, in `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
 
-- **armv5 / arm / arm32:** A legacy architecture mainly associated with early embedded systems. Rarely seen today but may exist in outdated devices like early versions of `Raspberry Pi` or some old smartphones.
+- **armv5 / arm / arm32:** An older architecture mainly associated with early embedded systems. Rarely found today but may be used in legacy devices like early versions of `Raspberry Pi` and some old smartphones.
 
-- **s390x:** This architecture is typically used in `IBM` mainframes, providing high performance and reliability for enterprise workloads.
+- **s390x:** This architecture is typically employed in IBM mainframes and provides high performance and reliability for enterprise workloads.
 
 </details> 
 
@@ -215,25 +220,25 @@ Our platform offers compatibility with a wide range of architectures and devices
 
 
 
-## 📊 Features || Functions
+## 📊 Functions || Features
 
 <details> 
     <summary>⚙️ Expand Description</summary>
 
 - System status monitoring
 - Search across all incoming connections and clients
-- Theme: `dark / light mode`
+- Theme: `dark / light`
 - Support for multiple users and multi-protocols
 - Supported protocols: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- Native support for XTLS protocols: `RPRX-Direct, Vision, REALITY`
-- Traffic statistics, traffic limits, time expiration limitations
-- Configurable `Xray` templates
-- Support for panel access via `HTTPS (custom domain + SSL certificate)`
-- One-click `SSL-certificate` request and automatic renewal support
-- For advanced configuration settings, see the panel
-- Fixed `API-routes` (user settings created via `API`)
-- Support for modifying configurations with various parameters available in the panel
-- Support for database export/import via panel
+- Native XTLS protocol support: `RPRX-Direct, Vision, REALITY`
+- Traffic stats, traffic limit, expiration time restriction
+- Customizable configuration templates for `Xray`
+- Panel access support via `HTTPS (own domain + SSL certificate)`
+- Support for one-click `SSL certificate` request and its auto-renewal
+- For more advanced configuration options, see the panel
+- Fixed `API routes` (user settings are created through `API`)
+- Support for modifying configurations by various parameters available in the panel
+- Support for database export/import through the panel
 
 </details> 
 
@@ -247,11 +252,11 @@ Our platform offers compatibility with a wide range of architectures and devices
 <details align="center"> 
     <summary> ⚙️ Expand Description </summary>
 
-Use this image at your own risk. By using it, you automatically agree to the associated license agreement terms.
+Use this image at your own risk. By using it, you automatically agree to the terms of the associated licensing agreement.
 
-The author provides no guarantees, express or implied, regarding the accuracy, completeness, or suitability of this image for any particular purposes. The author is not liable for any losses, including but not limited to direct, indirect, incidental, consequential, or special damages, arising from the use or inability to use this image or accompanying documentation, even if advised of the possibility of such damages.
+The author makes no guarantees, express or implied, regarding the accuracy, completeness, or suitability of this image for any specific purposes. The author is not liable for any losses, including but not limited to direct, indirect, incidental, consequential, or special damages arising from the use or inability to use this image or accompanying documentation, even if such damages were anticipated.
 
-By using this image, you acknowledge and assume all risks associated with its use. Additionally, you agree that the author cannot be held accountable for any issues or consequences resulting from its use.
+By using this image, you acknowledge and accept all risks associated with its application. Moreover, you agree that the author cannot be held accountable for any problems or consequences stemming from its use.
 
 </details> 
 
@@ -262,7 +267,7 @@ By using this image, you acknowledge and assume all risks associated with its us
 
 
 <h2 align="center">
-  <a href="#-table-of-contents">⬆️ Back to Top</a> 
+  <a href="#-contents">⬆️ Up</a> 
 </h2>
 
 
@@ -271,43 +276,44 @@ Cloudflare SSL Certificate
 </h1>
 
 <div align="center">
-  <img src="./media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloudflare " width="50%">
+  <img src="./media/Tutorial/Article_1/cloudflare.jpg" alt="Cloudflare" width="50%">
 </div>
 
-The management script includes a built-in function to request an `SSL certificate` through `Cloudflare`. To obtain a certificate using this script, you need to:
+The management script includes a built-in function for requesting `SSL certificates` through `Cloudflare`. To obtain a certificate via this script, you need:
+
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-- Email registered in `Cloudflare`
-- Global API Key from Cloudflare
-- Domain name must be directed (entered into DNS) to the current server via `Cloudflare`
+- An email registered with `Cloudflare`
+- Global API Key Cloudflare
+- The domain name must be pointed (defined in DNS) to the current server via `Cloudflare`
 
 
 
-## How to Get Global API Key from Cloudflare:
+## How to obtain the Global API Key Cloudflare:
 
-1. Run the `x-ui` command in the terminal, then select `Cloudflare SSL Certificate`.
+1. In the terminal, execute the command `x-ui`, then select `Cloudflare SSL Certificate`.
 
-2. Go to the link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+2. Follow the link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
 3. Click `View Global API Key` (see screenshot below):
 
 <div align="center">
-  <img src="./media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
+  <img src="./media/Tutorial/Article_1/APIKey1.png" alt="API Key 1" width="70%">
 </div>
 
-4. Re-authentication may be required. After that, the key will be shown (see screenshot below):
+4. Reauthentication may be required. After that, the key will be displayed (see screenshot below):
 
 <div align="center">
-  <img src="./media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
+  <img src="./media/Tutorial/Article_1/APIKey2.png" alt="API Key 2" width="70%">
 </div>
 
 
-When using, simply enter your domain, `email`, and `API KEY`. An example is shown below:
+When using, simply enter your domain, `email`, and `API KEY`. Example is shown below:
 
 <div align="center">
-  <img src="./media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
+  <img src="./media/Tutorial/Article_1/DetailEnter.png" alt="Detail Enter" width="70%">
 </div>
 
 </details> 
@@ -320,7 +326,7 @@ When using, simply enter your domain, `email`, and `API KEY`. An example is show
 
 
 <h2 align="center">
-  <a href="#-table-of-contents">⬆️ Back to Top</a> 
+  <a href="#-contents">⬆️ Up</a> 
 </h2>
 
 
@@ -356,7 +362,7 @@ bash ./self_signed_certificate.sh
 # 📊 Installing Required Packages
 
 1. System Update
-Before starting the installation, make sure your system is up-to-date. Run the following commands:
+Ensure your system is up to date before installation. Run the following commands:
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
@@ -364,7 +370,7 @@ sudo apt update && sudo apt upgrade -y &&
 
 2. Installing Required Packages
 
-Ensure the necessary packages are installed on your server:
+Ensure essential packages are installed on your server:
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
@@ -372,22 +378,22 @@ apt-get install wget curl openssl qrencode systemd -y
 
 
 
-## Installing 3X-UI Panel
+## Installing the 3X-UI Panel
 
-To install the panel on the server, run the script with the command:
+To install the panel on the server, execute the script using the command:
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-During installation, the script will ask:
+During the installation, the script will ask:
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-Answer `y` if you want to set the port yourself, or `n` if you want the script to assign a port automatically.
-Do not set standard ports like `22, 80, 8080`. We recommend selecting a different one, such as `8181`.
+Answer `y` if you want to set the port manually, or `n` for the script to assign a random port.
+Do not set standard ports such as `22, 80, 8080`. We recommend selecting any other port, e.g., `8181`.
 
 
 ```sh
@@ -402,13 +408,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-After completing these steps, the panel installation will be finished, and you can connect to the panel via a browser at:
+Upon completing these steps, the panel installation will be finished. You can access the panel via browser using the path:
 
 ```sh
-http://YOUR_SERVER_IP_ADDRESS:PORT/WebBasePath (e.g., http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://your_server_IP_address:port/WebBasePath (example: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
 ```
 
-When you enter the address in the browser, you will reach the panel login page, where you need to enter the username and password provided earlier by the script.
+After entering the address in your browser, you will reach the panel login window, where you must enter the username and password provided by the script earlier.
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -431,13 +437,13 @@ General Settings
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-Open the version selection and update panel.
+Open the version selection and update panel
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-Update the `GeoSite` and `GeoIP` data files.
+Update the data files `GeoSite` and `GeoIP`
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -446,32 +452,32 @@ Update the `GeoSite` and `GeoIP` data files.
 </details> 
 
 
-## Enabling Subscriptions
+## Enable Subscriptions
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-Go to `Settings` and enable subscriptions.
+Navigate to `Settings` and enable subscriptions
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-When finished, click `Save` and `Restart Panel`.
+Once done, click `Save` and `Restart Panel`
 
 # X-Ray Settings
 
 ## Basic Connections
 
-Go to `X-Ray Settings` -> select `General` -> open the `Basic Connections` section.
+Navigate to `X-Ray Settings` -> select `Main` -> open subsection `Basic Connections`
 
-Set all options as shown in the image:
+Set everything as shown in the image
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-When finished, click `Save` and `Restart Xray`.
+Once done, click `Save` and `Restart Xray`
 
 </details> 
 
@@ -485,13 +491,13 @@ When finished, click `Save` and `Restart Xray`.
     <summary> ⚙️ Expand Description </summary>
 
 
-Go to `X-Ray Settings` -> select `DNS` -> open the `DNS` section.
+Navigate to `X-Ray Settings` -> select `DNS` -> open subsection `DNS`
 
 <div align="center">
   <img src="./media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-Click `Create DNS` and enter the DNS addresses one by one:
+Click `Create DNS` and sequentially record `DNS addresses`
 
 ```bash
 tcp://8.8.8.8
@@ -509,7 +515,7 @@ tcp://9.9.9.9
   <img src="./media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-When finished, click `Save` and `Restart Xray`.
+Once done, click `Save` and `Restart Xray`
 
 </details> 
 
@@ -524,12 +530,12 @@ When finished, click `Save` and `Restart Xray`.
 
 
 <h1 align="center"> 
-Setting Up the First Connection
+Configuring the First Connection
 </h1>
 
 ## Now you can proceed to configure the first connection.
 
-Go to the side menu `"Connections"` -> Click `"Add Connection"`.
+Go to the side menu `"Connections"` -> Click the button `"Add Connection"`
 
 <div align="center">
   <img src="./media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
@@ -553,12 +559,12 @@ Go to the side menu `"Connections"` -> Click `"Add Connection"`.
 ---
 
 <h2 align="center"> 
-Documentation, Please Review It 
+Documentation familiarize yourself with it 
 </h2>
 
 <p align="center">
   <strong>-------></strong> 
   <a href="/README_en_EN.md"> English </a> | 
-  <a href="/README.md"> Русский </a> 
+  <a href="/README.md"> Russian </a> 
   <strong><-------</strong>
 </p>
