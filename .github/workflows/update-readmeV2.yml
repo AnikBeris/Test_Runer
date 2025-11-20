@@ -135,27 +135,34 @@ jobs:
           name: compiled-readme
           path: .
 
-      # 1. Создаём Pull Request
-      - name: Создать PR и авто-мердж (pascalgn)
+      # 1) Создаём ветку, коммитим README и открываем PR (если есть изменения)
+      - id: create_pr
+        name: Commit README and create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: chore: regenerate README from parts (авто)
+          branch: update/readme-${{ github.run_id }}
+          title: chore: regenerate README from parts (авто)
+          body: Автоматически собранный README из .github/README_PARTS
+          labels: automated
+          base: main
+          files: README.md
+
+      # 2) Автомерж — запускаем только если create-pull-request создал/нашёл PR
+      - name: Auto-merge PR (pascalgn)
+        if: ${{ steps.create_pr.outputs.pull-request-number != '' }}
         uses: pascalgn/automerge-action@v0.16.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          # Конфигурация мержа (актуальные параметры v0.16.4)
-          MERGE_LABELS: "automated"                    # Метка, которая триггерит мерж (было MERGE_LABEL — убрали!)
-          MERGE_METHOD: "squash"                       # Squash для чистой истории
-          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"  # Кастомное сообщение
-          MERGE_DELETE_BRANCH: "true"                  # Удаляем ветку после мержа
-          MERGE_REMOVE_LABELS: "automated"             # Убираем метку после мержа
-
-          # Конфигурация обновления PR (rebase на base)
-          UPDATE_METHOD: "rebase"                      # Rebase для обхода "up to date"
-          UPDATE_LABELS: "automated"                   # Та же метка для обновления
-
-          # Фильтры (только для твоего бота)
-          MERGE_FILTER_AUTHOR: "github-actions[bot]"   # Только PR от бота
-
-          # Дополнительно (опционально, для надёжности)
-          MERGE_RETRIES: "3"                           # 3 попытки, если checks висят
-          MERGE_RETRY_SLEEP: "10000"                   # 10 сек между попытками
-          MERGE_FORKS: "false"                         # Не мержим форки (для безопасности)
+          MERGE_LABELS: "automated"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "chore: regenerate README from parts (авто)"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_REMOVE_LABELS: "automated"
+          UPDATE_METHOD: "rebase"
+          UPDATE_LABELS: "automated"
+          MERGE_FILTER_AUTHOR: "github-actions[bot]"
+          MERGE_RETRIES: "3"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_FORKS: "false"
