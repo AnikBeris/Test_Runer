@@ -1,4 +1,15 @@
 <p align="center">
+  <strong>-------></strong>
+  <a href="/README.md">Русский</a> |
+  <a href="/docs/README.en.md">English</a> |
+  <a href="/docs/README.es.md">Spanish</a> |
+  <a href="/docs/README.zh.md">Chinese</a> |
+  <strong><-------</strong>
+</p>
+
+
+
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./media/logo-dark.png">
     <img alt="Project Logo" src="./media/logo-light.png" width="512" height="auto">
@@ -553,6 +564,18 @@ tcp://9.9.9.9
 <h2 align="center"> 
 Документация ознакомьтесь с ней 
 </h2>
+
+
+
+
+<p align="center">
+  <strong>-------></strong>
+  <a href="/README.md">Русский</a> |
+  <a href="/docs/README.en.md">English</a> |
+  <a href="/docs/README.es.md">Spanish</a> |
+  <a href="/docs/README.zh.md">Chinese</a> |
+  <strong><-------</strong>
+</p>
 
 
 

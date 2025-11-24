@@ -7,12 +7,10 @@
   <strong><-------</strong>
 </p>
 
-
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../media/logo-dark.png">
-    <img alt="Project Logo" src="../media/logo-light.png" width="512" height="auto">
+    <img alt="项目标志" src="../media/logo-light.png" width="512" height="auto">
   </picture>
 </p>
 
@@ -30,28 +28,24 @@
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-关于安装与设置 3x-ui + SSL证书的文章
+关于安装和配置3x-ui + SSL证书的文章
 </h1>
 
 <h2 align="center">
-> 💡 本教程面向有一定技术基础的用户。
+> 💡 本文面向有经验的用户。
 </h2>
 
-
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
 ⚠️ 免责声明 ⚠️
 </h2>
 
 <p align="center">
-  作者不对使用此项目产生的任何潜在后果负责。<br>
-  风险自担。
+  作者对使用本项目可能产生的任何后果不承担责任。<br>
+  使用时需自担风险。
 </p>
 
 <details align="center"> 
@@ -59,23 +53,23 @@
     
 使用此镜像需自行承担风险。
 
-1. 使用时，您即表示同意与其相关的许可协议中的条款。
+1. 使用此镜像即表示您自动同意与此相关的许可协议中的条款。
 
-2. 作者对该镜像的准确性、完整性或针对特定目的的适用性不提供任何明示或暗示的保证。
-3. 无论是否提前警告可能损失的风险，作者都不对因使用或无法使用镜像及附带的文档导致的任何损失负责，包括但不限于直接、间接、附带、偶然或特殊损失。
+2. 作者对镜像的准确性、完整性及其用于特定目的的适用性不提供任何明示或暗示的保证。
+3. 作者不对因使用或无法使用该镜像或其附带文档而产生的任何损害负责，包括但不限于直接、间接、附带或特别损害，即使事先已获知此类损害的可能性。
 
-4. 使用此镜像即表示您完全接受使用过程中的风险。此外，您同意作者无法对任何使用本镜像引发的问题或后果负责。
+4. 使用此镜像即确认并承担与其应用相关的所有风险。此外，您同意，作者对因使用本镜像而产生的任何问题或后果概不负责。
 
 </details> 
 
 ---
 
 <h3 align="center"> 
-💖 支持项目 
+💖 支持该项目 
 </h3>
 
 <p align="center"> 
-如果您认为此项目对您有所帮助，可以为它加星标支持。:star2: 
+如果这个项目对您有用，您可以通过给它点亮星标来支持它。:star2: 
 </p>
 
 <p align="center">
@@ -87,11 +81,9 @@
   </a>
 </p>
 
-
-
 <h4 align="center"> 
-无论捐赠多少金额都会受到欢迎，感谢支持。😌 
-</h1>
+即使只是一些小的捐赠也会被非常感激，感谢您。😌 
+</h4>
 
 <div align="center">
 
@@ -109,7 +101,7 @@
 ---
 
 <p align="center">
-  <sub> 感谢您关注项目并支持 💙 </sub>
+  <sub> 感谢您对项目的关注与支持 💙 </sub>
 </p>
 
 ---
@@ -117,42 +109,27 @@
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
 
-
-
 ## 📚 目录
 
-- [介绍](#-介绍)
+- [简介](#-简介)
 
-
-
-
-## 🔗 有用链接
-
-  
-
-
-
-
-
-
+## 🔗 相关链接
 
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
   <a href="#-目录"> ⬆️ 返回顶部 </a> 
 </h2>
 
 <h1 align="center"> 
-技术要求
+技术需求
 </h1>
 
 ## 📊 推荐操作系统
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开内容</summary>
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -172,107 +149,93 @@
 
 </details> 
 
-
-
 ## 📊 支持的架构和设备
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开内容</summary>
 
-我们的平台支持各种架构和设备，能够在不同的计算环境中提供灵活性。以下是我们支持的主要架构：
+我们的平台兼容范围广泛的架构和设备，为各种计算环境提供灵活性。以下是我们支持的主要架构：
 
-- **amd64:** 广泛的架构标准，适用于个人电脑及服务器，可无缝运行大多数现代操作系统。
+- **amd64:** 这是个人计算机和服务器的标准架构，支持大多数现代操作系统的流畅运行。
 
-- **x86 / i386:** 常用于台式电脑和笔记本电脑。此架构拥有多个操作系统及应用的广泛支持，如 `Windows, macOS 和 Linux`。
+- **x86 / i386:** 广泛应用于台式机和笔记本电脑中。该架构具有多个操作系统和应用程序的广泛支持，包括`Windows, macOS 和 Linux`等。
 
-- **armv8 / arm64 / aarch64:** 专为现代移动及嵌入式设备设计，例如智能手机和平板电脑。设备示例：`Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS` 等。
+- **armv8 / arm64 / aarch64:** 为现代移动和嵌入式设备（如智能手机和平板电脑）设计的架构。示例设备有：`Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`等。
 
-- **armv7 / arm / arm32:** 适用于较老的移动和嵌入式设备。仍广泛用于如 `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2` 等设备。
+- **armv7 / arm / arm32:** 用于旧版移动和嵌入式设备架构。其中仍广泛应用于设备如`Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`等。
 
-- **armv6 / arm / arm32:** 针对非常旧的嵌入式设备。虽然不常见，但仍应用于如 `Raspberry Pi 1, Raspberry Pi Zero/Zero W` 等设备。
+- **armv6 / arm / arm32:** 面向旧式嵌入式设备的架构。虽然少见，但仍应用于`Raspberry Pi 1, Raspberry Pi Zero/Zero W`之类的设备。
 
-- **armv5 / arm / arm32:** 较老的架构，主要涉及早期的嵌入式系统。如今极为罕见，但仍可用于旧设备，如早期版本的 `Raspberry Pi` 和一些旧款智能手机。
+- **armv5 / arm / arm32:** 早期嵌入式系统的架构。尽管现在很少见，仍可能用于老旧设备，如早期版本`Raspberry Pi`或一些较老的智能手机中。
 
-- **s390x:** 该架构通常用于 `IBM` 主机，为企业级工作负载提供高性能和可靠性。
+- **s390x:** 通常用于`IBM`主机中，为企业级负载提供高性能和可靠性。
 
 </details> 
-
-
-
 
 ## 📊 支持的语言
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开内容</summary>
 
-- 英语
-- 波斯语
-- 繁体中文
-- 简体中文
-- 日语
-- 俄语
-- 越南语
-- 西班牙语
-- 印尼语
-- 乌克兰语
-- 土耳其语
-- 葡萄牙语（巴西）
+- English
+- Persian
+- Traditional Chinese
+- Simplified Chinese
+- Japanese
+- Russian
+- Vietnamese
+- Spanish
+- Indonesian
+- Ukrainian
+- Turkish
+- Português (Brazil)
 
 </details> 
 
-
-
-
-## 📊 功能特色
+## 📊 功能 || 特性
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开内容</summary>
 
 - 系统状态监控
-- 搜索所有传入连接和客户
-- 主题：`暗色 /亮色`
+- 搜索所有入站连接和客户端
+- 主题支持：`深色 / 浅色`
 - 支持多用户和多协议
-- 支持协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- 支持原生 XTLS协议：`RPRX-Direct, Vision, REALITY`
-- 流量统计、流量限制、到期时间限制
-- 可定制的 `Xray` 配置模板
-- 支持通过 `HTTPS（自定义域名+SSL证书）` 访问控制面板
-- 支持单击请求 `SSL证书` 并自动续期
-- 有关更高级的配置参数，请参阅面板
-- 修复的 `API路线`（用户配置通过 `API` 创建）
-- 支持通过面板根据各种参数修改配置
-- 支持通过面板导出/导入数据库
+- 支持以下协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
+- 支持原生 XTLS 协议：`RPRX-Direct, Vision, REALITY`
+- 流量统计、流量限制、过期时间限制
+- 可配置的`Xray`配置模板
+- 支持通过`HTTPS (自定义域名+SSL证书)`访问面板
+- 支持一键获取 `SSL证书` 和其自动续期
+- 面板提供更高级别的配置参数
+- 修复`API端点` (通过`API`创建用户设置)
+- 提供支持面板上基于不同参数的配置更改
+- 支持在面板上导出/导入数据库
 
 </details> 
-
-
-
 
 <h1 align="center">
 ⚠️ 免责声明 ⚠️
 </h2>
 
 <details align="center"> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-使用此镜像需自行承担风险。使用时，您即表示同意与其相关的许可协议中的条款。
+使用该镜像需自行承担风险。使用即表示您自动同意与此相关的许可协议中的条款。
 
-作者对该镜像的准确性、完整性或针对特定目的的适用性不提供任何明示或暗示的保证。作者不对因使用或无法使用镜像及附带的文档导致的任何损失负责，包括但不限于直接、间接、附带、偶然或特殊损失。
+作者对镜像的准确性、完整性及其用于特定目的的适用性不提供任何明确或隐含的保证。作者不对因使用或无法使用该镜像或其附带文档而产生的任何损害担负责，包括但不限于直接、间接、附带或特别损害，即使是已提前告知损害可能性的情况下。
 
-使用此镜像即表示您完全接受使用过程中的风险。此外，您同意作者无法对任何使用本镜像引发的问题或后果负责。
+使用本镜像即确认并承担与其应用相关的所有风险。此外，您同意，作者对因此而产生的任何问题或后果概不负责。
 
 </details> 
-
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h2 align="center">
   <a href="#-目录">⬆️ 返回顶部</a> 
 </h2>
-
 
 <h1 align="center"> 
 Cloudflare SSL证书
@@ -282,38 +245,34 @@ Cloudflare SSL证书
   <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
 
-管理脚本包含了通过 `Cloudflare`请求 `SSL证书` 的内置功能。使用此脚本获取证书需要以下条件：
-
+管理脚本包括通过`Cloudflare`获取`SSL证书`的功能。要通过此脚本获取证书，您需要：
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-- 在 `Cloudflare` 注册的邮箱
-- Global API Key Cloudflare
-- 使用 `Cloudflare` DNS 将域名指向当前服务器
+- 在`Cloudflare`注册的邮箱
+- Cloudflare Global API Key
+- 通过`Cloudflare`将域名解析（DNS解析）至当前服务器地址
 
+## 如何获取Cloudflare Global API Key:
 
+1. 在终端中运行命令`x-ui`，然后选择 `Cloudflare SSL Certificate`。
 
-## 如何获取 Global API Key Cloudflare：
+2. 打开链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-1. 在终端执行命令 `x-ui`，然后选择 `Cloudflare SSL Certificate`。
-
-2. 点击链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
-
-3. 点击 `View Global API Key`（见下图）
+3. 点击`View Global API Key`（详见下面截图）：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
 </div>
 
-4. 可能需要身份验证，完成后即可查看API Key（见下图）
+4. 可能需要重新身份验证。验证成功后将显示API密钥（参考下图）：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
 </div>
 
-
-在使用时，输入您的域名、邮箱和 `API KEY` 即可。示例如下：
+将您的域名、`email`和`API KEY`输入即可。如下示例所示：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
@@ -321,28 +280,22 @@ Cloudflare SSL证书
 
 </details> 
 
-
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
-
 
 <h2 align="center">
   <a href="#-目录">⬆️ 返回顶部</a> 
 </h2>
 
-
 <h1 align="center"> 
-3X-UI安装
+安装3X-UI
 </h1>
 
-
-# 1. 快速安装 3X
+# 1. 快速安装3X
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
-
+    <summary> ⚙️ 展开内容 </summary>
 
 ```sh
 sudo apt update && sudo apt upgrade -y && \
@@ -355,47 +308,44 @@ bash ./self_signed_certificate.sh
 
 </details> 
 
-# 2. 分步安装 3X
-
+# 2. 分步骤安装3X
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-# 📊 安装必要的软件包
+# 📊 必要组件安装
 
 1. 更新系统
-开始之前，确保您的系统是最新的，运行以下命令：
+开始安装前，请确保系统已更新。执行以下命令：
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
 ```
 
-2. 安装必需的软件包
+2. 安装必需包
 
-确保服务器已安装以下所需软件：
+确保以下必要的组件已安装至您的服务器上：
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
 ```
 
+## 安装3X-UI面板
 
-
-## 安装 3X-UI 面板
-
-在服务器上执行以下命令以安装面板：
+运行以下脚本以安装面板至您的服务器：
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-安装过程中脚本会询问您：
+安装时脚本会询问：
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-回答 `y` 以自定义端口，或者回答 `n` 让脚本自动生成端口。
-请勿使用 `22, 80, 8080` 等默认端口，建议选择其他端口，如 `8181`。
+回答`y`可自行设置端口，选择`n`则由脚本随机分配端口。
+不要选择默认端口，如`22, 80, 8080`等，推荐使用如`8181`的非默认端口。
 
 ```sh
 Username: 3favnjd8
@@ -409,13 +359,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-完成以上步骤后，面板安装完成，可通过浏览器访问以下地址：
+安装完成后，可以通过浏览器访问该路径进行面板登录
 
 ```sh
-http://服务器IP地址:port/WebBasePath (例如：http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://您的服务器IP地址:端口/WebBasePath (示例: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
 ```
 
-在浏览器输入该地址后，将跳转登录页面，输入脚本生成的用户名及密码即可登录。
+访问后，将进入登录界面，请输入脚本安装完成时提示的管理员用户名称和密码。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -423,28 +373,26 @@ http://服务器IP地址:port/WebBasePath (例如：http://192.168.0.10:40608/vp
 
 </details> 
 
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-常规设置
+通用设置
 </h1>
 
-## 更新 GeoSite GeoIP 数据
+## 更新 GeoSite 和 GeoIP
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-打开版本选择和更新的面板
+打开版本和更新选择面板。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-更新 `GeoSite` 和 `GeoIP` 数据
+更新`GeoSite`和`GeoIP`数据文件。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -452,52 +400,47 @@ http://服务器IP地址:port/WebBasePath (例如：http://192.168.0.10:40608/vp
 
 </details> 
 
-
-## 启用订阅功能
+## 启用订阅
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-进入 `设置`，启用订阅功能
+进入`设置`并启用订阅功能。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启面板`
+设置完成后，点击`保存`并`重启面板`。
 
-# X-Ray 设置
+# X-Ray设置
 
 ## 基础连接
 
-转到 `X-Ray 设置` -> 选择 `基础` -> 打开子菜单 `基础连接`
+进入`X-Ray设置` -> 选择`基本设置` -> 展开`基础连接`子选项。
 
-按图设置所有选项
+根据下图进行设置：
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启 Xray`
+设置完成后，点击`保存`并`重启Xray`。
 
 </details> 
-
-
-
 
 ## DNS
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开内容 </summary>
 
-
-转到 `X-Ray 设置` -> 选择 `DNS` -> 打开子菜单 `DNS`
+进入`X-Ray设置` -> 选择`DNS` -> 展开`DNS`子选项。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-点击 `创建 DNS`，依次添加以下 `DNS地址`：
+点击`创建DNS`，分别添加以下`DNS地址`：
 
 ```bash
 tcp://8.8.8.8
@@ -515,56 +458,41 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启 Xray`
+设置完成后，点击`保存`并`重启Xray`。
 
 </details> 
-
-
-
-
-
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-设置首个连接
+配置首次连接
 </h1>
 
-## 现在可以开始设置第一个连接了。
+## 现在可以开始配置首次连接。
 
-转到侧边菜单 `"连接"` -> 点击 `"添加连接"`
+在侧边菜单中选择`"连接"` -> 点击`"添加连接"`。
 
 <div align="center">
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
 </div>
 
-
-
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
-
 <h1 align="center"> 📜 许可证 </h1>
 <p align="center">
-  <strong> 本项目根据 </strong> 
+  <strong> 该项目基于 </strong> 
   <a href="/LICENSE">Apache License</a> 
-  <strong> 授权分发 </strong>
 </p>
 
 ---
 
 <h2 align="center"> 
-请查阅文档
+阅览文档以进一步了解 
 </h2>
-
-
-
 
 <p align="center">
   <strong>-------></strong>
