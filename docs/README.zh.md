@@ -1,18 +1,17 @@
 <p align="center">
   <strong>-------></strong>
-  <a href="/README.md">Русский</a> |
-  <a href="/docs/README.en.md">English</a> |
-  <a href="/docs/README.es.md">Spanish</a> |
-  <a href="/docs/README.zh.md">Chinese</a> |
+  <a href="/README.md">俄语</a> |
+  <a href="/docs/README.en.md">英语</a> |
+  <a href="/docs/README.es.md">西班牙语</a> |
+  <a href="/docs/README.zh.md">中文</a> |
   <strong><-------</strong>
 </p>
-
 
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../media/logo-dark.png">
-    <img alt="Project Logo" src="../media/logo-light.png" width="512" height="auto">
+    <img alt="项目标志" src="../media/logo-light.png" width="512" height="auto">
   </picture>
 </p>
 
@@ -22,7 +21,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-blue?style=flat&logo=github)](https://github.com/AnikBeris)
 [![License](https://img.shields.io/badge/License-purple?style=flat&logo=github)](/LICENSE.md)
-[![GitHub Stars](https://img.shields.io/github/stars/AnikBeris?style=flat&logo=github&label=星标&color=orange)](https://github.com/AnikBeris)
+[![GitHub Stars](https://img.shields.io/github/stars/AnikBeris?style=flat&logo=github&label=星星&color=orange)](https://github.com/AnikBeris)
 
 </div>
 
@@ -32,11 +31,11 @@
 
 
 <h1 align="center"> 
-3x-ui + SSL证书安装和配置指南
+3x-ui 安装与 SSL证书配置教程
 </h1>
 
 <h2 align="center">
-> 💡 本文面向有经验的用户。
+> 💡 该内容适合有一定技术背景的用户使用。
 </h2>
 
 
@@ -50,22 +49,21 @@
 </h2>
 
 <p align="center">
-  作者对使用本项目可能导致的任何后果不承担责任。<br>
-  一切后果由用户自行承担。
+  作者对使用本项目可能产生的任何后果不承担责任。<br>
+  使用时请自行承担风险。
 </p>
 
 <details align="center"> 
     <summary>⚠️完整免责声明⚠️</summary>
     
-使用本项目时，您需自担风险。
+使用本镜像需自行承担风险。
 
-1. 使用本项目即表示您已自动同意相关许可协议的条款。
+1. 使用时，即默认同意与此有关的许可协议中的条款。
 
-2. 作者对本项目的准确性、完整性或适用性不作任何明示或暗示的保证。 
+2. 作者不对本镜像的准确性、完整性或是否适 合某些特定用途提供任何明示或暗示的保证。 
+3. 作者不对因使用或无法使用本镜像或其配套 文档而造成的任何损失负责，包括但不限于直接、间接、附带、继发或特别损害，哪怕事前已通知有产生损害的可能性。
 
-3. 作者对由于使用或无法使用本项目或其文档所引发的任何损失（包括直接、间接、附带、特殊损失等）不负责任，即使事先已获知可能存在此类损失。
-
-4. 使用本项目即表示您同意承担其带来的所有风险，并同意作者对因使用本项目而产生的任何问题或后果不负责任。
+4. 使用本镜像即表示确认并接受其应用所涉及的所有风险。此外，使用者同意作者不对使用过程中或因使用导致的任何问题或后果负责。
 
 </details> 
 
@@ -76,7 +74,7 @@
 </h3>
 
 <p align="center"> 
-如果您觉得本项目对您有所帮助，可以给它点个⭐:star2: 
+如果您觉得此项目对您有所帮助，可以为其点亮一个星星 :star2: 
 </p>
 
 <p align="center">
@@ -91,7 +89,7 @@
 
 
 <h4 align="center"> 
-您的每一份捐赠，无论多少，都深表感谢。 😌 
+捐赠不论多少都受到热烈欢迎，非常感谢 😌 
 </h1>
 
 <div align="center">
@@ -110,7 +108,7 @@
 ---
 
 <p align="center">
-  <sub> 感谢您关注和支持本项目 💙 </sub>
+  <sub> 感谢对本项目的关注与支持 💙 </sub>
 </p>
 
 ---
@@ -127,7 +125,7 @@
 
 
 
-## 🔗 相关链接
+## 🔗 实用链接
 
   
 
@@ -147,13 +145,13 @@
 </h2>
 
 <h1 align="center"> 
-技术要求
+技术需求
 </h1>
 
 ## 📊 推荐操作系统
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -175,26 +173,26 @@
 
 
 
-## 📊 支持的架构和设备
+## 📊 支持的架构及设备
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
-我们的平台与多种架构和设备兼容，适用于不同的计算环境，以下是我们支持的主要架构：
+平台兼容多种架构和设备，在不同计算环境中灵活使用。以下列出主要支持的架构：
 
-- **amd64:** 这种常见架构是个人电脑和服务器的标准，支持大多数现代操作系统。
+- **amd64:** 普遍应用于个人电脑和服务器，是大部分现代操作系统的标准。
 
-- **x86 / i386:** 广泛应用于台式机和笔记本，支持`Windows、macOS和Linux`等多种操作系统和应用。
+- **x86 / i386:** 常见于台式机和笔记本。广泛支持多类操作系统和应用程序，包括 `Windows、macOS 和 Linux` 等。
 
-- **armv8 / arm64 / aarch64:** 适用于现代移动设备和嵌入式设备，例如`Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`等。
+- **armv8 / arm64 / aarch64:** 针对现代移动和嵌入式设备，如智能手机和平板电脑。包括设备如 `Raspberry Pi 4、Raspberry Pi 3、Raspberry Pi Zero 2/Zero 2 W`、`Orange Pi 3 LTS` 等。
 
-- **armv7 / arm / arm32:** 用于早期的移动设备和嵌入式设备，仍然广泛用于`Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`等设备。
+- **armv7 / arm / arm32:** 面向较旧的移动和嵌入式设备。仍然广泛应用于 `Orange Pi Zero LTS、Orange Pi PC Plus、Raspberry Pi 2` 等设备。
 
-- **armv6 / arm / arm32:** 面向非常老旧的嵌入式设备，例如`Raspberry Pi 1, Raspberry Pi Zero/Zero W`。
+- **armv6 / arm / arm32:** 支持非常老旧的嵌入式设备。尽管其使用率较低，仍适用于如 `Raspberry Pi 1、Raspberry Pi Zero/Zero W`。
 
-- **armv5 / arm / arm32:** 更早期的架构，主要在早期嵌入式系统中使用，现较为少见。
+- **armv5 / arm / arm32:** 较旧架构，主要与早期嵌入式系统相关。如今已不常见，但可用于老旧设备如早期 `Raspberry Pi` 以及部分旧智慧手机。
 
-- **s390x:** 用于`IBM`大型机，提供企业级高性能和可靠性。
+- **s390x:** 通常用于 `IBM` 大型机，提供企业级工作负载所需的高性能和可靠性。
 
 </details> 
 
@@ -204,45 +202,45 @@
 ## 📊 支持的语言
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
-- English
-- Persian
-- Traditional Chinese
-- Simplified Chinese
-- Japanese
-- Russian
-- Vietnamese
-- Spanish
-- Indonesian
-- Ukrainian
-- Turkish
-- Português (Brazil)
+- 英语
+- 波斯语
+- 繁体中文
+- 简体中文
+- 日语
+- 俄语
+- 越南语
+- 西班牙语
+- 印度尼西亚语
+- 乌克兰语
+- 土耳其语
+- 葡萄牙语（巴西）
 
 </details> 
 
 
 
 
-## 📊 功能 || 特性
+## 📊 功能特色
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
-- 系统状态监控
-- 所有入站连接和客户端的搜索
-- 主题：`深色模式/浅色模式`
-- 支持多用户和多协议
-- 支持的协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- 支持原生XTLS协议：`RPRX-Direct, Vision, REALITY`
-- 流量统计、流量限制、过期时间控制
-- 可自定义`Xray`配置模板
-- 支持通过`HTTPS`访问面板（自定义域名+SSL证书）
-- 支持一键申请`SSL证书`和自动续订
-- 更多高级配置参数请查看控制面板
-- 改良的`API路由`（用户设置通过`API`创建）
-- 支持面板中根据可用参数修改配置
-- 支持通过面板导出/导入数据库
+- 系统状态监视
+- 所有入站连接及客户端搜索功能
+- 主题：`暗色主题/亮色主题`
+- 支持多用户及多协议
+- 支持协议：`VMESS、VLESS、Trojan、Shadowsocks、Dokodemo-door、Socks、HTTP、WireGuard`
+- 支持本地 `XTLS` 协议：`RPRX-Direct、Vision、REALITY`
+- 流量统计、流量限制、到期时间限制
+- 可定制的 `Xray` 配置模板
+- 支持以 `HTTPS（自定义域名 + SSL证书）` 访问面板
+- 支持一键请求 `SSL证书` 并自动续期
+- 其他高级设置可通过面板配置
+- 修正的 `API路由`（用户设置通过 `API` 创建）
+- 支持通过面板根据不同参数修改配置
+- 支持通过面板导入/导出数据库
 
 </details> 
 
@@ -254,13 +252,13 @@
 </h2>
 
 <details align="center"> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-使用本项目时，您需自担风险。使用即表示您同意相关许可协议的条款。
+使用本镜像需自行承担风险。使用即默认同意其相关许可协议中的条款。
 
-作者对本项目的准确性、完整性或适用性不作任何明示或暗示的保证。作者对由于使用或无法使用本项目或其文档所引发的任何损失（包括直接、间接、附带、特殊损失等）不负责任，即使事先已获知可能存在此类损失。
+作者不对本镜像的准确性、完整性或是否适用于某些特定用途提供任何明示或暗示的保证。作者不对因使用或无法使用本镜像或其文档而造成的任何损失负责，包括但不限于直接、间接、附带、继发或特殊损害，即便已事前告知存在损害的可能性。
 
-使用本项目即表示您同意承担其带来的所有风险，并同意作者对因使用本项目而产生的任何问题或后果不负责任。
+使用本镜像即表示确认并接受其应用所涉及的所有风险。此外，使用者同意作者不对使用过程中或因使用导致的任何问题或后果负责。
 
 </details> 
 
@@ -276,48 +274,48 @@
 
 
 <h1 align="center"> 
-Cloudflare SSL证书
+Cloudflare 的 SSL证书
 </h1>
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
+  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt="Cloudflare" width="50%">
 </div>
 
-管理脚本包含内置功能，可以通过`Cloudflare`申请`SSL证书`。申请证书需具备以下条件：
+管理脚本包含通过 `Cloudflare` 请求 `SSL证书` 的内置功能。使用该脚本获取证书需要满足以下条件：
 
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-- 注册`Cloudflare`的电子邮箱
-- Cloudflare的Global API Key
-- 域名需通过`Cloudflare`解析并指向当前服务器
+- 在 `Cloudflare` 注册的邮箱
+- Global API Key Cloudflare
+- 域名需通过 `Cloudflare` 的 DNS 指向当前服务器
 
 
 
-## 如何获取Cloudflare Global API Key：
+## 如何获取 Global API Key Cloudflare：
 
-1. 在终端运行命令`x-ui`，选择`Cloudflare SSL Certificate`。
+1. 在终端执行命令 `x-ui`，然后选择 `Cloudflare SSL Certificate`。
 
-2. 打开链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+2. 打开以下链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-3. 点击`View Global API Key`（参见下方截图）：
+3. 点击 `View Global API Key`（如下图所示）：
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
+  <img src="../media/Tutorial/Article_1/APIKey1.png" alt="API Key 1" width="70%">
 </div>
 
-4. 可能需要重新验证身份，完成后显示密钥（参见下方截图）：
+4. 可能需要再次进行身份验证，随后会展示 API Key（如下图所示）：
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
+  <img src="../media/Tutorial/Article_1/APIKey2.png" alt="API Key 2" width="70%">
 </div>
 
 
-申请时仅需输入您的域名、`email`和`API KEY`。如下实例所示：
+使用时输入您的域名、`email` 和 `API KEY`。示例如下：
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
+  <img src="../media/Tutorial/Article_1/DetailEnter.png" alt="Detail Enter" width="70%">
 </div>
 
 </details> 
@@ -335,14 +333,14 @@ Cloudflare SSL证书
 
 
 <h1 align="center"> 
-3X-UI安装
+3X-UI 安装教程
 </h1>
 
 
-# 1. 3X快速安装
+# 1. 快速安装 3X
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
 
 ```sh
@@ -357,24 +355,24 @@ bash ./self_signed_certificate.sh
 
 </details> 
 
-# 2. 3X分步安装
+# 2. 分步安装 3X
 
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-# 📊 安装所需软件包
+# 📊 安装所需依赖项
 
 1. 系统更新
-安装前确认系统已更新，运行以下命令：
+在安装前，请确保系统已更新。执行以下命令：
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
 ```
 
-2. 安装必要软件包
+2. 安装必要的软件包
 
-确认服务器中安装了以下软件包：
+确保您的服务器上已安装以下软件包：
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
@@ -382,23 +380,22 @@ apt-get install wget curl openssl qrencode systemd -y
 
 
 
-## 安装3X-UI面板
+## 安装 3X-UI 面板
 
-运行以下脚本在服务器上安装面板：
+在服务器上运行以下脚本命令以安装面板：
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-安装过程中脚本会提示问题：
+在安装过程中脚本会提示您：
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-回答`y`可以自行设置端口，回答`n`则脚本会随机设置。
-不要使用固定端口`22, 80, 8080`，推荐选择其它端口，例如`8181`。
-
+选择 `y` 来手动设置端口，或选择 `n` 让脚本随机设置。
+请避免选择标准端口 `22, 80, 8080`，建议选择其他端口，如 `8181`。
 
 ```sh
 Username: 3favnjd8
@@ -412,13 +409,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-完成这些步骤后，即可通过以下URL访问面板：
+完成以上步骤后，面板安装完成。使用服务器 IP 地址和设定的端口通过浏览器连接到控制面板。
 
 ```sh
-http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://服务器_IP地址:端口/WebBasePath（例如：http://192.168.0.10:40608/vpkPI6ex9ajesDX）
 ```
 
-在浏览器中打开地址后，输入脚本提供的用户名和密码即可登录面板。
+在浏览器中输入地址后，会进入面板登录页面。在此输入脚本安装时提供的登录用户名和密码。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -433,21 +430,21 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 
 
 <h1 align="center"> 
-通用设置
+常规设置
 </h1>
 
-## 更新GeoSite和GeoIP
+## 更新 GeoSite GeoIP 数据
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-打开版本和更新界面：
+进入版本与更新界面
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-更新数据文件`GeoSite`和`GeoIP`：
+更新 `GeoSite` 和 `GeoIP` 数据文件
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -456,32 +453,32 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 </details> 
 
 
-## 启用订阅
+## 启用订阅功能
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-进入`设置`并启用订阅设置：
+进入设置界面，启用订阅功能
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-完成后点击`保存`并`重启面板`。
+设置完成后点击保存并重启面板
 
-# X-Ray设置
+# X-Ray 设置
 
-## 基础连接
+## 基本连接
 
-进入`X-Ray设置` -> 选择`一般` -> 打开子选项`基础连接`
+进入 `X-Ray 设置` -> 点击 `基本设置` -> 打开 `基本连接` 子菜单
 
-参考如下配置：
+按照以下示例设置
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-完成后点击`保存`并`重启Xray`。
+设置完成后点击保存并重启 Xray
 
 </details> 
 
@@ -489,19 +486,19 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 
 
 
-## DNS
+## DNS 设置
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
 
-进入`X-Ray设置` -> 选择`DNS` -> 打开子选项`DNS`
+进入 `X-Ray 设置` -> 点击 `DNS 设置` -> 打开 `DNS` 设置子菜单
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-点击`创建DNS`并依次添加以下`DNS地址`：
+点击 `新增 DNS`，依次添加以下地址：
 
 ```bash
 tcp://8.8.8.8
@@ -519,7 +516,7 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-完成后点击`保存`并`重启Xray`。
+设置完成后点击保存并重启 Xray
 
 </details> 
 
@@ -534,12 +531,12 @@ tcp://9.9.9.9
 
 
 <h1 align="center"> 
-连接配置
+首次连接设置
 </h1>
 
-## 现在可以开始配置第一个连接了。
+## 接下来可以开始首次连接设置。
 
-在侧边菜单中选择`"连接"` -> 点击`"添加连接"`：
+进入左侧菜单 `"连接"` -> 点击 `"新增连接"`
 
 <div align="center">
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
@@ -556,14 +553,15 @@ tcp://9.9.9.9
 
 <h1 align="center"> 📜 许可证 </h1>
 <p align="center">
-  <strong> 本项目基于 </strong> 
-  <a href="/LICENSE">Apache License</a> 
+  <strong> 本项目根据 </strong> 
+  <a href="/LICENSE">Apache 许可证</a> 
+  <strong> 分发 </strong>
 </p>
 
 ---
 
 <h2 align="center"> 
-请阅读文档 
+文档请详阅 
 </h2>
 
 
@@ -571,9 +569,9 @@ tcp://9.9.9.9
 
 <p align="center">
   <strong>-------></strong>
-  <a href="/README.md">Русский</a> |
-  <a href="/docs/README.en.md">English</a> |
-  <a href="/docs/README.es.md">Spanish</a> |
-  <a href="/docs/README.zh.md">Chinese</a> |
+  <a href="/README.md">俄语</a> |
+  <a href="/docs/README.en.md">英语</a> |
+  <a href="/docs/README.es.md">西班牙语</a> |
+  <a href="/docs/README.zh.md">中文</a> |
   <strong><-------</strong>
 </p>
