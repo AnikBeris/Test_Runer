@@ -12,7 +12,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../media/logo-dark.png">
-    <img alt="Logo del Proyecto" src="../media/logo-light.png" width="512" height="auto">
+    <img alt="Project Logo" src="../media/logo-light.png" width="512" height="auto">
   </picture>
 </p>
 
@@ -32,11 +32,11 @@
 
 
 <h1 align="center"> 
-Artículo sobre instalación y configuración de 3x-ui + Certificado SSL
+Guía para la instalación y configuración de 3x-ui + Certificado SSL
 </h1>
 
 <h2 align="center">
-> 💡 Este material está orientado a usuarios avanzados.
+> 💡 Este material está destinado a usuarios avanzados.
 </h2>
 
 
@@ -50,7 +50,7 @@ Artículo sobre instalación y configuración de 3x-ui + Certificado SSL
 </h2>
 
 <p align="center">
-  El autor no se hace responsable de cualquier consecuencia derivada del uso de este proyecto.<br>
+  El autor no se responsabiliza por las posibles consecuencias del uso de este proyecto.<br>
   Úselo bajo su propio riesgo.
 </p>
 
@@ -59,38 +59,38 @@ Artículo sobre instalación y configuración de 3x-ui + Certificado SSL
     
 Use esta imagen bajo su propio riesgo.
 
-1. Al usarla, usted acepta automáticamente los términos del acuerdo de licencia asociado con ella.
+1. Al utilizarla, automáticamente acepta los términos del acuerdo de licencia asociados con ella.
 
-2. El autor no proporciona garantías, expresas o implícitas, en cuanto a la exactitud, integridad o idoneidad de esta imagen para ningún propósito específico. 
-3. El autor no se hace responsable de ningún daño, incluyendo pero no limitado a, daños directos, indirectos, incidentales, consecuentes o especiales derivados del uso o la imposibilidad de usar esta imagen o la documentación que la acompaña, incluso si se le informó previamente de la posibilidad de dichos daños.
+2. El autor no otorga ninguna garantía, explícita o implícita, respecto a la precisión, integridad o idoneidad de esta imagen para propósitos específicos.
+3. El autor no se hace responsable de ningún daño, incluidos, entre otros, daños directos, indirectos, incidentales, consecuentes o especiales, ocasionados por el uso o la imposibilidad de usar esta imagen o la documentación que la acompaña, incluso si se ha advertido previamente de la posibilidad de dichos daños.
 
-4. Al usar esta imagen, usted acepta y asume todos los riesgos relacionados con su implementación. Además, reconoce que el autor no puede ser considerado responsable de ningún problema o consecuencia que surja del uso de la misma.
+4. Al utilizar esta imagen, usted confirma y asume todos los riesgos asociados con su aplicación. Además, acepta que el autor no puede ser considerado responsable de ningún problema o consecuencia derivada de su uso.
 
 </details> 
 
 ---
 
 <h3 align="center"> 
-💖 Apoye el proyecto 
+💖 Apoya el proyecto 
 </h3>
 
 <p align="center"> 
-Si este proyecto le ha resultado útil, puede calificarlo con una estrella.:star2: 
+Si este proyecto le resultó útil, puede valorarlo dejando una estrella.:star2: 
 </p>
 
 <p align="center">
   <a href="https://pay.cloudtips.ru/p/7249ba98" target="_blank">
-    <img src="../media/buymeacoffe.png" alt="Invítame un café">
+    <img src="../media/buymeacoffe.png" alt="Buy Me a Coffee">
   </a>
   <a href="https://pay.cloudtips.ru/p/7249ba98" target="_blank">
-    <img src="../media/buymeacoffe.png" alt="Invítame un café">
+    <img src="../media/buymeacoffe.png" alt="Buy Me a Coffee">
   </a>
 </p>
 
 
 
 <h4 align="center"> 
-Las donaciones son muy bien recibidas, sin importar cuán pequeñas sean. Muchas gracias. 😌 
+Las donaciones son bienvenidas, por pequeñas que sean. Muchas gracias. 😌 
 </h4>
 
 <div align="center">
@@ -109,7 +109,7 @@ Las donaciones son muy bien recibidas, sin importar cuán pequeñas sean. Muchas
 ---
 
 <p align="center">
-  <sub> Gracias por su atención al proyecto y por su apoyo 💙 </sub>
+  <sub> Gracias por su interés en el proyecto y por su apoyo 💙 </sub>
 </p>
 
 ---
@@ -142,17 +142,17 @@ Las donaciones son muy bien recibidas, sin importar cuán pequeñas sean. Muchas
 
 
 <h2 align="center">
-  <a href="#-contenido"> ⬆️ Ir arriba </a> 
+  <a href="#-contenido"> ⬆️ Ir al inicio </a> 
 </h2>
 
 <h1 align="center"> 
-Requisitos técnicos
+Requisitos Técnicos
 </h1>
 
-## 📊 Sistemas Operativos recomendados
+## 📊 Sistema Operativo Recomendado
 
 <details> 
-    <summary>⚙️ Ver descripción</summary>
+    <summary>⚙️ Expandir descripción</summary>
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -174,36 +174,36 @@ Requisitos técnicos
 
 
 
-## 📊 Arquitecturas y dispositivos soportados
+## 📊 Arquitecturas y Dispositivos Compatibles
 
 <details> 
-    <summary>⚙️ Ver descripción</summary>
+    <summary>⚙️ Expandir descripción</summary>
 
-Nuestra plataforma garantiza compatibilidad con una amplia gama de arquitecturas y dispositivos, ofreciendo flexibilidad en entornos de computación diversos. Las principales arquitecturas soportadas son las siguientes:
+Nuestra plataforma ofrece compatibilidad con una amplia gama de arquitecturas y dispositivos, brindando flexibilidad en diferentes entornos informáticos. A continuación, se citan las principales arquitecturas soportadas:
 
-- **amd64:** Arquitectura ampliamente utilizada en computadoras personales y servidores, garantizando un funcionamiento óptimo con la mayoría de los sistemas operativos modernos.
+- **amd64:** Esta arquitectura común es estándar para computadoras personales y servidores, asegurando un funcionamiento fluido de la mayoría de los sistemas operativos modernos.
 
-- **x86 / i386:** Predominante en ordenadores de escritorio y portátiles. Posee una vasta compatibilidad con sistemas como `Windows, macOS y Linux`.
+- **x86 / i386:** Ampliamente utilizada en ordenadores de escritorio y portátiles. La arquitectura cuenta con un importante soporte de numerosos sistemas operativos y aplicaciones, incluyendo `Windows, macOS y Linux`.
 
-- **armv8 / arm64 / aarch64:** Ideal para dispositivos móviles y embebidos modernos como smartphones y tablets. Ejemplo de dispositivos: `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS` y más.
+- **armv8 / arm64 / aarch64:** Diseñada para dispositivos móviles y embebidos modernos como smartphones y tablets. Ejemplos: `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS` entre otros.
 
-- **armv7 / arm / arm32:** Arquitectura utilizada en dispositivos móviles y embebidos más antiguos. Aún viable en dispositivos como `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, entre otros.
+- **armv7 / arm / arm32:** Arquitectura para dispositivos móviles y embebidos más antiguos. Todavía se usa ampliamente en dispositivos como `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2` y otros.
 
-- **armv6 / arm / arm32:** Dirigida a dispositivos embebidos muy antiguos como `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
+- **armv6 / arm / arm32:** Orientada a dispositivos embebidos muy antiguos. Aunque menos común, aún se utiliza en dispositivos como `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
 
-- **armv5 / arm / arm32:** Una de las arquitecturas históricas para sistemas embebidos tempranos, hoy menos común.
+- **armv5 / arm / arm32:** Arquitectura antigua asociada principalmente a sistemas embebidos de primera generación. Hoy en día es rara, pero puede usarse en equipos obsoletos, como versiones tempranas de `Raspberry Pi` y algunos smartphones antiguos.
 
-- **s390x:** Arquitectura utilizada en los mainframes de `IBM`, proporcionando alta fiabilidad para cargas de trabajo empresariales.
+- **s390x:** Arquitectura común en mainframes `IBM`, diseñada para ofrecer alto rendimiento y fiabilidad para cargas de trabajo empresariales.
 
 </details> 
 
 
 
 
-## 📊 Idiomas soportados
+## 📊 Idiomas Soportados
 
 <details> 
-    <summary>⚙️ Ver descripción</summary>
+    <summary>⚙️ Expandir descripción</summary>
 
 - Inglés
 - Persa
@@ -223,23 +223,24 @@ Nuestra plataforma garantiza compatibilidad con una amplia gama de arquitecturas
 
 
 
-## 📊 Funcionalidades
+## 📊 Funciones || Características
 
 <details> 
-    <summary>⚙️ Ver descripción</summary>
+    <summary>⚙️ Expandir descripción</summary>
 
 - Monitoreo del estado del sistema
-- Búsqueda en todas las conexiones entrantes y clientes
-- Tema: `oscuro/claro`
-- Soporte multiusuario y multiprotocolos
-- Protocolos soportados: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- Soporte para protocolos nativos XTLS: `RPRX-Direct, Vision, REALITY`
-- Estadísticas de tráfico, límite de tráfico, restricciones por fecha de vencimiento
-- Plantillas de configuración personalizables para `Xray`
-- Soporte para acceso HTTPS (incluye dominio propio y certificado SSL)
-- Solicitud de certificado SSL de un clic y renovación automática
-- Configuraciones avanzadas disponibles en el panel
-- Rutas de `API` ajustadas (configuraciones se crean mediante la `API`)
+- Búsqueda de todas las conexiones entrantes y clientes
+- Tema: `oscuro / claro`
+- Soporte para múltiples usuarios y protocolos múltiples
+- Soporte para protocolos: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
+- Compatibilidad con protocolos XTLS nativos: `RPRX-Direct, Vision, REALITY`
+- Estadísticas de tráfico, límite de tráfico, restricción por fecha de expiración
+- Plantillas configurables para `Xray`
+- Soporte para acceso HTTPS con `dominio propio + certificado SSL`
+- Compatible con solicitudes de certificado `SSL` en un clic y renovación automática
+- Para más configuraciones avanzadas, diríjase al panel
+- Corrección de `API-rutas` (las configuraciones del usuario se realizan mediante `API`)
+- Soporte para cambiar configuraciones según diferentes parámetros en el panel
 - Soporte para exportar/importar bases de datos desde el panel
 
 </details> 
@@ -252,13 +253,13 @@ Nuestra plataforma garantiza compatibilidad con una amplia gama de arquitecturas
 </h2>
 
 <details align="center"> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
-Use esta imagen bajo su propio riesgo. Al usarla, usted acepta automáticamente los términos del acuerdo de licencia asociado con ella.
+Use esta imagen bajo su propio riesgo. Al hacerlo, usted acepta automáticamente los términos del acuerdo de licencia asociados con este.
 
-El autor no proporciona garantías, expresas o implícitas, en cuanto a la exactitud, integridad o idoneidad de esta imagen para ningún propósito específico. El autor no se hace responsable de ningún daño, incluyendo pero no limitado a, daños directos, indirectos, incidentales, consecuentes o especiales derivados del uso o la imposibilidad de usar esta imagen o la documentación que la acompaña, incluso si fue notificado previamente de la posibilidad de dichos daños.
+El autor no otorga garantías, explícitas o implícitas, sobre la precisión, completitud o idoneidad de esta imagen para cualquier propósito específico. El autor no se hace responsable de daños, incluidos, entre otros, daños directos, indirectos, incidentales, consecuentes o especiales ocasionados por el uso o la imposibilidad de usar esta imagen o su documentación asociada, incluso si se informó previamente sobre la posibilidad de tales daños.
 
-Al usar esta imagen, usted acepta y asume todos los riesgos relacionados con su implementación. Además, reconoce que el autor no puede ser considerado responsable de ningún problema o consecuencia que surja del uso de la misma.
+Al utilizar esta imagen, confirma y asume todos los riesgos asociados con su uso. Además, acepta que el autor no puede ser considerado responsable por ningún problema o consecuencia derivada de su utilización.
 
 </details> 
 
@@ -269,7 +270,7 @@ Al usar esta imagen, usted acepta y asume todos los riesgos relacionados con su 
 
 
 <h2 align="center">
-  <a href="#-contenido">⬆️ Ir arriba</a> 
+  <a href="#-contenido">⬆️ Ir al inicio</a> 
 </h2>
 
 
@@ -281,38 +282,38 @@ Certificado SSL de Cloudflare
   <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
 
-El script de gestión incluye una función incorporada para solicitar el `Certificado SSL` a través de `Cloudflare`. Para obtener el certificado mediante este script, debe:
+El script de gestión incluye una función integrada para solicitar un `Certificado SSL` a través de `Cloudflare`. Para obtener el certificado mediante este script, necesitará:
 
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
 - Correo electrónico registrado en `Cloudflare`
 - Global API Key de Cloudflare
-- Nombre de dominio apuntando al servidor actual (configurado en DNS) a través de `Cloudflare`
+- Nombre de dominio dirigido (configurado en DNS) al servidor actual a través de `Cloudflare`
 
 
 
-## Pasos para obtener el Global API Key de Cloudflare:
+## Cómo obtener la Global API Key de Cloudflare:
 
-1. En la terminal, ejecute el comando `x-ui`, luego seleccione `Cloudflare SSL Certificate`.
+1. En el terminal, ejecute el comando `x-ui`, luego seleccione `Certificado SSL de Cloudflare`.
 
-2. Visite el enlace: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+2. Visite: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-3. Haga clic en `View Global API Key` (ver captura de abajo):
+3. Pulse en `View Global API Key` (ver imagen a continuación):
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
 </div>
 
-4. Es posible que sea necesaria una nueva autenticación. La clave será mostrada después (ver ejemplo de abajo):
+4. Puede que sea necesario realizar una nueva autenticación. Después, la clave será mostrada (ver imagen a continuación):
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
 </div>
 
 
-Solo introduzca su dominio, `email` y `API KEY`. Ejemplo a continuación:
+Al utilizar, simplemente introduzca su dominio, `correo electrónico` y `API KEY`. Ejemplo a continuación:
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
@@ -328,7 +329,7 @@ Solo introduzca su dominio, `email` y `API KEY`. Ejemplo a continuación:
 
 
 <h2 align="center">
-  <a href="#-contenido">⬆️ Ir arriba</a> 
+  <a href="#-contenido">⬆️ Ir al inicio</a> 
 </h2>
 
 
@@ -340,7 +341,7 @@ Instalación de 3X-UI
 # 1. Instalación rápida de 3X
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
 
 ```sh
@@ -355,24 +356,24 @@ bash ./self_signed_certificate.sh
 
 </details> 
 
-# 2. Instalación paso a paso de 3X
+# 2. Instalación por etapas de 3X
 
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
-# 📊 Instalación de los paquetes necesarios
+# 📊 Instalación de paquetes necesarios
 
 1. Actualización del sistema
-Antes de iniciar la instalación, asegúrese de que su sistema esté actualizado ejecutando los siguientes comandos:
+Antes de comenzar la instalación, asegúrese de que su sistema esté actualizado. Ejecute los siguientes comandos:
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
 ```
 
-2. Instalación de los paquetes necesarios
+2. Instalación de paquetes necesarios
 
-Verifique que los paquetes necesarios estén instalados en su servidor:
+Verifique que en su servidor estén instalados los paquetes requeridos:
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
@@ -382,20 +383,21 @@ apt-get install wget curl openssl qrencode systemd -y
 
 ## Instalación del panel 3X-UI
 
-Para instalar el panel en el servidor, ejecute el siguiente comando:
+Para instalar el panel en el servidor ejecute el siguiente script:
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-Durante la instalación, el script preguntará:
+Durante la instalación, el script le hará la pregunta:
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-Responda con `y` si desea establecer el puerto manualmente, o `n` para que el script seleccione un puerto automáticamente.
-No debe utilizar puertos estándar como `22, 80, 8080`. Es recomendable elegir otro puerto, por ejemplo `8181`.
+Responda `y` si desea establecer el puerto manualmente, o `n` si prefiere que el script lo haga automáticamente.
+Evite usar puertos estándar como `22, 80, 8080`. Se recomienda elegir otro, por ejemplo `8181`.
+
 
 ```sh
 Username: 3favnjd8
@@ -409,13 +411,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-Después de completar estos pasos, la instalación del panel estará terminada y podrá acceder al panel desde su navegador en la dirección:
+Después de realizar estos pasos, la instalación del panel estará completa y podrá conectarse a la interfaz a través del navegador navegando al siguiente enlace:
 
 ```sh
-http://IP_del_servidor:puerto/WebBasePath (ejemplo: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://IP_de_su_servidor:puerto/WebBasePath (ejemplo: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
 ```
 
-Cuando abra esa dirección en el navegador, verá la ventana de inicio de sesión para el panel, donde deberá ingresar las credenciales que el script proporcionó anteriormente.
+Tras introducir la dirección en el navegador será dirigido a la pantalla de inicio de sesión, ingrese el usuario y contraseña que el script generó.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -430,13 +432,13 @@ Cuando abra esa dirección en el navegador, verá la ventana de inicio de sesió
 
 
 <h1 align="center"> 
-Configuraciones generales
+Configuraciones Generales
 </h1>
 
-## Actualización de GeoSite y GeoIP
+## Actualización GeoSite y GeoIP
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
 Abra el panel de selección de versiones y actualizaciones.
 
@@ -444,7 +446,7 @@ Abra el panel de selección de versiones y actualizaciones.
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-Actualice los archivos de datos para `GeoSite` y `GeoIP`.
+Actualice los archivos `GeoSite` y `GeoIP`.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -453,32 +455,32 @@ Actualice los archivos de datos para `GeoSite` y `GeoIP`.
 </details> 
 
 
-## Activación de las suscripciones
+## Habilitar suscripciones
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
-Acceda a `Configuraciones` y active las suscripciones.
+Vaya a `configuración` y habilite las suscripciones.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-Cuando termine, haga clic en `Guardar` y reinicie el panel.
+Cuando termine, haga clic en `guardar` y `reiniciar el panel`.
 
-# Configuraciones de X-Ray
+# Configuración de X-Ray
 
 ## Conexiones básicas
 
-Vaya a `Configuraciones de X-Ray` -> seleccione `Básicas` -> abra el submenú `Conexiones básicas`.
+Diríjase a `configuración de X-Ray` -> seleccione `General` -> abra el submenú `Conexiones básicas`.
 
-Configure todo tal como se muestra en la imagen.
+Configure tal como muestra la imagen:
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-Cuando termine, haga clic en `Guardar` y reinicie `Xray`.
+Cuando termine, haga clic en `guardar` y `reiniciar Xray`.
 
 </details> 
 
@@ -489,16 +491,16 @@ Cuando termine, haga clic en `Guardar` y reinicie `Xray`.
 ## DNS
 
 <details> 
-    <summary> ⚙️ Ver descripción </summary>
+    <summary> ⚙️ Expandir descripción </summary>
 
 
-Vaya a `Configuraciones de X-Ray` -> seleccione `DNS` -> abra el submenú `DNS`.
+Diríjase a `configuración de X-Ray` -> seleccione `DNS` -> abra el submenú `DNS`.
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-Haga clic en `Crear DNS` y registre las direcciones de `DNS` una a una.
+Seleccione `Crear DNS` y agregue las direcciones `DNS` una por una:
 
 ```bash
 tcp://8.8.8.8
@@ -516,7 +518,7 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-Cuando termine, haga clic en `Guardar` y reinicie Xray.
+Cuando termine, haga clic en `guardar` y `reiniciar Xray`.
 
 </details> 
 
@@ -534,9 +536,9 @@ Cuando termine, haga clic en `Guardar` y reinicie Xray.
 Configuración de la primera conexión
 </h1>
 
-## Ahora se puede proceder a configurar la primera conexión.
+## Ahora puede proceder a configurar la primera conexión.
 
-En el menú lateral, seleccione `"Conexiones"` -> Haga clic en el botón `"Agregar conexión"`.
+Diríjase al menú lateral `"Conexiones"` -> Haga clic en el botón `"Agregar conexión"`.
 
 <div align="center">
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
@@ -553,7 +555,7 @@ En el menú lateral, seleccione `"Conexiones"` -> Haga clic en el botón `"Agreg
 
 <h1 align="center"> 📜 Licencia </h1>
 <p align="center">
-  <strong> Este proyecto está distribuido bajo la </strong> 
+  <strong> Este proyecto se distribuye bajo </strong> 
   <a href="/LICENSE">Apache License</a> 
 </p>
 
