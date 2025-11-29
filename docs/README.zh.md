@@ -7,8 +7,6 @@
   <strong><-------</strong>
 </p>
 
-
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../media/logo-dark.png">
@@ -22,7 +20,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-blue?style=flat&logo=github)](https://github.com/AnikBeris)
 [![License](https://img.shields.io/badge/License-purple?style=flat&logo=github)](/LICENSE.md)
-[![GitHub Stars](https://img.shields.io/github/stars/AnikBeris?style=flat&logo=github&label=星标&color=orange)](https://github.com/AnikBeris)
+[![GitHub Stars](https://img.shields.io/github/stars/AnikBeris?style=flat&logo=github&label=Звёзды&color=orange)](https://github.com/AnikBeris)
 
 </div>
 
@@ -30,42 +28,37 @@
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-3x-ui + SSL证书安装和配置指南
+3x-ui + SSL 证书的安装与配置指南
 </h1>
 
 <h2 align="center">
-> 💡 本文面向有经验的用户。
+> 💡 本教程面向有一定技术背景的用户。
 </h2>
 
-
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
 ⚠️ 免责声明 ⚠️
 </h2>
 
 <p align="center">
-  作者对使用本项目可能导致的任何后果不承担责任。<br>
-  一切后果由用户自行承担。
+  作者对因使用本项目导致的任何后果概不负责。<br>
+  请自行承担风险使用。
 </p>
 
 <details align="center"> 
-    <summary>⚠️完整免责声明⚠️</summary>
+    <summary>⚠️完整文本⚠️</summary>
     
-使用本项目时，您需自担风险。
+使用该镜像需自行承担风险。
 
-1. 使用本项目即表示您已自动同意相关许可协议的条款。
+1. 使用本项目即表示您已自动同意相关的许可协议条款。
 
-2. 作者对本项目的准确性、完整性或适用性不作任何明示或暗示的保证。 
+2. 作者不对镜像的准确性、完整性或适用于特定用途做出任何明示或暗示的保证。
+3. 作者不对因使用或无法使用该镜像或伴随的文档所导致的任何损失负责，包括但不限于直接、间接、偶然、连带或特殊损失，即使已提前获得相关风险提示。
 
-3. 作者对由于使用或无法使用本项目或其文档所引发的任何损失（包括直接、间接、附带、特殊损失等）不负责任，即使事先已获知可能存在此类损失。
-
-4. 使用本项目即表示您同意承担其带来的所有风险，并同意作者对因使用本项目而产生的任何问题或后果不负责任。
+4. 使用本项目即表示您理解并接受所有与使用相关的风险。此外，您同意作者不对因使用本项目导致的任何问题或后果负责。
 
 </details> 
 
@@ -76,7 +69,7 @@
 </h3>
 
 <p align="center"> 
-如果您觉得本项目对您有所帮助，可以给它点个⭐:star2: 
+如果本项目对您有帮助，欢迎您为其加星点赞。:star2: 
 </p>
 
 <p align="center">
@@ -88,10 +81,8 @@
   </a>
 </p>
 
-
-
 <h4 align="center"> 
-您的每一份捐赠，无论多少，都深表感谢。 😌 
+再小的捐赠都备受欢迎, 万分感谢您的支持 😌 
 </h1>
 
 <div align="center">
@@ -110,7 +101,7 @@
 ---
 
 <p align="center">
-  <sub> 感谢您关注和支持本项目 💙 </sub>
+  <sub> 感谢您对本项目的关注与支持 💙 </sub>
 </p>
 
 ---
@@ -118,32 +109,17 @@
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
 
-
-
-## 📚 目录
+## 📚 内容目录
 
 - [简介](#-简介)
 
-
-
-
-## 🔗 相关链接
-
-  
-
-
-
-
-
-
+## 🔗 有用链接
 
 * * * * * * * * * * * * * * * * * * 
 * * * * * * * * * * * * * * * * * * 
-
-
 
 <h2 align="center">
-  <a href="#-目录"> ⬆️ 返回顶部 </a> 
+  <a href="#-内容目录"> ⬆️ 返回顶部 </a> 
 </h2>
 
 <h1 align="center"> 
@@ -153,7 +129,7 @@
 ## 📊 推荐操作系统
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -173,38 +149,33 @@
 
 </details> 
 
-
-
 ## 📊 支持的架构和设备
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
-我们的平台与多种架构和设备兼容，适用于不同的计算环境，以下是我们支持的主要架构：
+我们的平台支持广泛的架构和设备，确保在不同的计算环境中提供灵活性。以下是我们支持的主要架构：
 
-- **amd64:** 这种常见架构是个人电脑和服务器的标准，支持大多数现代操作系统。
+- **amd64:** 通用架构，是个人电脑和服务器的标准架构，支持大多数现代操作系统。
 
-- **x86 / i386:** 广泛应用于台式机和笔记本，支持`Windows、macOS和Linux`等多种操作系统和应用。
+- **x86 / i386:** 广泛用于台式机和笔记本电脑。支持众多操作系统和应用，包括`Windows, macOS 和 Linux`。
 
-- **armv8 / arm64 / aarch64:** 适用于现代移动设备和嵌入式设备，例如`Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`等。
+- **armv8 / arm64 / aarch64:** 适用于现代移动设备和嵌入式设备，如`Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`，`Orange Pi 3 LTS`等。
 
-- **armv7 / arm / arm32:** 用于早期的移动设备和嵌入式设备，仍然广泛用于`Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`等设备。
+- **armv7 / arm / arm32:** 用于较旧的移动设备和嵌入式设备，如`Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`等。
 
-- **armv6 / arm / arm32:** 面向非常老旧的嵌入式设备，例如`Raspberry Pi 1, Raspberry Pi Zero/Zero W`。
+- **armv6 / arm / arm32:** 面向较老的嵌入式设备，例如`Raspberry Pi 1, Raspberry Pi Zero/Zero W`。
 
-- **armv5 / arm / arm32:** 更早期的架构，主要在早期嵌入式系统中使用，现较为少见。
+- **armv5 / arm / arm32:** 比较古老的架构，多用于早期嵌入式系统。
 
-- **s390x:** 用于`IBM`大型机，提供企业级高性能和可靠性。
+- **s390x:** 常用于`IBM`主机，提供高性能和可靠性，适用于企业级负载。
 
 </details> 
-
-
-
 
 ## 📊 支持的语言
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
 - English
 - Persian
@@ -221,100 +192,87 @@
 
 </details> 
 
-
-
-
-## 📊 功能 || 特性
+## 📊 功能特色
 
 <details> 
-    <summary>⚙️ 展开详情</summary>
+    <summary>⚙️ 展开说明</summary>
 
 - 系统状态监控
-- 所有入站连接和客户端的搜索
-- 主题：`深色模式/浅色模式`
-- 支持多用户和多协议
-- 支持的协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- 支持原生XTLS协议：`RPRX-Direct, Vision, REALITY`
-- 流量统计、流量限制、过期时间控制
-- 可自定义`Xray`配置模板
-- 支持通过`HTTPS`访问面板（自定义域名+SSL证书）
-- 支持一键申请`SSL证书`和自动续订
-- 更多高级配置参数请查看控制面板
-- 改良的`API路由`（用户设置通过`API`创建）
-- 支持面板中根据可用参数修改配置
-- 支持通过面板导出/导入数据库
+- 查看所有入站连接和客户端
+- 支持主题：`深色 / 浅色`
+- 多用户和多协议支持
+- 支持协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
+- 支持原生 XTLS 协议：`RPRX-Direct, Vision, REALITY`
+- 流量统计、流量限制、到期时间限制
+- 自定义`Xray`配置模板
+- 支持通过`HTTPS (自定义域名 + SSL证书)`访问面板
+- 支持一键请求`SSL证书`并自动更新
+- 更多高级配置选项可在面板中设置
+- 改进的`API路由`（用户设置通过`API`配置）
+- 支持通过面板编辑基于多种参数的配置
+- 数据库支持导入/导出功能
 
 </details> 
-
-
-
 
 <h1 align="center">
 ⚠️ 免责声明 ⚠️
 </h2>
 
 <details align="center"> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-使用本项目时，您需自担风险。使用即表示您同意相关许可协议的条款。
+使用该镜像需自行承担风险。使用本项目即表示您已自动同意相关的许可协议条款。
 
-作者对本项目的准确性、完整性或适用性不作任何明示或暗示的保证。作者对由于使用或无法使用本项目或其文档所引发的任何损失（包括直接、间接、附带、特殊损失等）不负责任，即使事先已获知可能存在此类损失。
+作者不对镜像的准确性、完整性或适用于特定用途做出任何明示或暗示的保证。作者不对因使用或无法使用该镜像或相关文档所导致的任何损失负责，包括但不限于直接、间接、偶然、连带或特殊损失，即使已提前获得相关风险提示。
 
-使用本项目即表示您同意承担其带来的所有风险，并同意作者对因使用本项目而产生的任何问题或后果不负责任。
+使用本项目即表示您理解并接受所有与使用相关的风险。此外，您同意作者不对因使用本项目导致的任何问题或后果负责。
 
 </details> 
-
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h2 align="center">
-  <a href="#-目录">⬆️ 返回顶部</a> 
+  <a href="#-内容目录">⬆️ 返回顶部</a> 
 </h2>
 
-
 <h1 align="center"> 
-Cloudflare SSL证书
+Cloudflare SSL 证书
 </h1>
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
 
-管理脚本包含内置功能，可以通过`Cloudflare`申请`SSL证书`。申请证书需具备以下条件：
-
+管理脚本内置了通过`Cloudflare`请求`SSL证书`的功能。要使用此脚本获取证书，请确保具备以下条件：
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-- 注册`Cloudflare`的电子邮箱
-- Cloudflare的Global API Key
-- 域名需通过`Cloudflare`解析并指向当前服务器
+- 在`Cloudflare`注册的邮箱
+- Cloudflare 全局 API 密钥
+- 域名通过`Cloudflare`解析到当前服务器
 
+## 如何获取 Cloudflare 全局 API 密钥：
 
+1. 在终端输入命令 `x-ui`，选择`Cloudflare SSL Certificate`。
 
-## 如何获取Cloudflare Global API Key：
+2. 访问链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 
-1. 在终端运行命令`x-ui`，选择`Cloudflare SSL Certificate`。
-
-2. 打开链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
-
-3. 点击`View Global API Key`（参见下方截图）：
+3. 点击`View Global API Key`（如下图所示）：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
 </div>
 
-4. 可能需要重新验证身份，完成后显示密钥（参见下方截图）：
+4. 可能需要重新验证身份，验证后会展示密钥（如下图所示）：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
 </div>
 
-
-申请时仅需输入您的域名、`email`和`API KEY`。如下实例所示：
+输入您的域名、`Email`和`API KEY`，示例如下：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
@@ -322,28 +280,22 @@ Cloudflare SSL证书
 
 </details> 
 
-
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h2 align="center">
-  <a href="#-目录">⬆️ 返回顶部</a> 
+  <a href="#-内容目录">⬆️ 返回顶部</a> 
 </h2>
 
-
 <h1 align="center"> 
-3X-UI安装
+安装 3X-UI
 </h1>
 
-
-# 1. 3X快速安装
+# 1. 快速安装 3X
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
-
+    <summary> ⚙️ 展开说明 </summary>
 
 ```sh
 sudo apt update && sudo apt upgrade -y && \
@@ -357,48 +309,46 @@ bash ./self_signed_certificate.sh
 
 </details> 
 
-# 2. 3X分步安装
-
+# 2. 分步安装 3X
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-# 📊 安装所需软件包
+# 📊 安装必备软件包
 
-1. 系统更新
-安装前确认系统已更新，运行以下命令：
+1. 更新系统
+在安装前，请确保您的系统是最新的，执行以下命令：
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
 ```
 
-2. 安装必要软件包
+2. 安装必备软件包
 
-确认服务器中安装了以下软件包：
+确保您的服务器已安装必要的软件包：
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
 ```
 
-
-
 ## 安装3X-UI面板
 
-运行以下脚本在服务器上安装面板：
+在服务器上安装面板，运行以下命令启动脚本：
 
 ```sh
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-安装过程中脚本会提示问题：
+安装过程中，脚本会询问：
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-回答`y`可以自行设置端口，回答`n`则脚本会随机设置。
-不要使用固定端口`22, 80, 8080`，推荐选择其它端口，例如`8181`。
+回答`y`可以自定义端口，回答`n`时脚本会随机分配端口。
+注意：请勿使用常规端口如`22, 80, 8080`，建议选择其他端口，如`8181`。
 
+安装完成后会显示如下信息：
 
 ```sh
 Username: 3favnjd8
@@ -412,13 +362,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-完成这些步骤后，即可通过以下URL访问面板：
+完成上述步骤后，面板安装完成。可通过以下链接访问面板：
 
 ```sh
-http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://<您服务器的IP地址>:端口/WebBasePath (例如: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
 ```
 
-在浏览器中打开地址后，输入脚本提供的用户名和密码即可登录面板。
+在浏览器中访问地址后，输入脚本生成的用户名和密码登录面板。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -426,28 +376,26 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 
 </details> 
 
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
-
 
 <h1 align="center"> 
 通用设置
 </h1>
 
-## 更新GeoSite和GeoIP
+## 更新 GeoSite 和 GeoIP 数据
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-打开版本和更新界面：
+打开版本和更新选项页面。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-更新数据文件`GeoSite`和`GeoIP`：
+更新`GeoSite`和`GeoIP`数据文件。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -455,13 +403,12 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 
 </details> 
 
-
-## 启用订阅
+## 启用订阅功能
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-进入`设置`并启用订阅设置：
+进入`设置`界面，启动订阅功能。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
@@ -469,39 +416,34 @@ http://服务器的IP地址:端口/WebBasePath(例子：http://192.168.0.10:4060
 
 完成后点击`保存`并`重启面板`。
 
-# X-Ray设置
+# X-Ray 设置
 
 ## 基础连接
 
-进入`X-Ray设置` -> 选择`一般` -> 打开子选项`基础连接`
+进入`X-Ray 设置` -> 选择`基础设置` -> 打开`基础连接`子菜单。
 
-参考如下配置：
+按图示进行配置。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-完成后点击`保存`并`重启Xray`。
+完成后点击`保存`并`重启 X-ray`。
 
 </details> 
 
-
-
-
-
-## DNS
+## DNS 设置
 
 <details> 
-    <summary> ⚙️ 展开详情 </summary>
+    <summary> ⚙️ 展开说明 </summary>
 
-
-进入`X-Ray设置` -> 选择`DNS` -> 打开子选项`DNS`
+进入`X-Ray 设置` -> 选择`DNS` -> 打开`DNS`子菜单。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-点击`创建DNS`并依次添加以下`DNS地址`：
+点击`创建 DNS`按钮，依次添加下列`DNS 地址`：
 
 ```bash
 tcp://8.8.8.8
@@ -519,55 +461,41 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-完成后点击`保存`并`重启Xray`。
+完成后点击`保存`并`重启 X-ray`。
 
 </details> 
-
-
-
-
-
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-连接配置
+配置第一个连接
 </h1>
 
 ## 现在可以开始配置第一个连接了。
 
-在侧边菜单中选择`"连接"` -> 点击`"添加连接"`：
+在侧边菜单中选择`"连接"` -> 点击`"添加连接"`。
 
 <div align="center">
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
 </div>
 
-
-
-
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
-
-<h1 align="center"> 📜 许可证 </h1>
+<h1 align="center"> 📜 许可协议 </h1>
 <p align="center">
   <strong> 本项目基于 </strong> 
-  <a href="/LICENSE">Apache License</a> 
+  <a href="/LICENSE">Apache License</a> 分发
 </p>
 
 ---
 
 <h2 align="center"> 
-请阅读文档 
+请查阅完整文档 
 </h2>
-
-
-
 
 <p align="center">
   <strong>-------></strong>
