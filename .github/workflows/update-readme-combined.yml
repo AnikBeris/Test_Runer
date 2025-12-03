@@ -26,7 +26,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "README.md"                                 # при изменении README — запускается перевод
+#      - "README.md"                                 # при изменении README — запускается перевод
       - ".github/README_PARTS/*"                    # при изменении частей — запускается сборка README
       - ".github/README_PARTS/5.MAIN_Article_*.md"
       - ".github/README_PARTS/0.Language.md"        # Важно: полностью игнорируем изменения только в 0.Language.md
