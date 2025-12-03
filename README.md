@@ -274,6 +274,8 @@
 </h2>
 
 
+
+   
 <h1 align="center"> 
 SSL-сертификат Cloudflare
 </h1>
@@ -326,6 +328,7 @@ SSL-сертификат Cloudflare
 <div align="center">
   <img src="./media/image0.gif" alt="SPACER" width="90%">
 </div>
+
 
 
 <h2 align="center">
