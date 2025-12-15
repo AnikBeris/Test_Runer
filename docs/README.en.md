@@ -28,38 +28,38 @@
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
 
-
 <h1 align="center"> 
-Installation and Setup of 3x-ui + SSL Certificate Article
+Installation and Configuration Guide for 3x-UI + SSL Certificate
 </h1>
 
 <h2 align="center">
-> 💡 The material is intended for experienced users.
+> 💡 This material is intended for experienced users.
 </h2>
 
----
+
+* * * * * * * * * * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * 
 
 <h2 align="center">
 ⚠️ Disclaimer ⚠️
 </h2>
 
 <p align="center">
-  The author is not responsible for any possible consequences of using this project.<br>
-  Use at your own risk.
+  The author is not responsible for any potential consequences of using this project.<br>
+  Use it at your own risk.
 </p>
 
 <details align="center"> 
-    <summary>⚠️Full Text⚠️</summary>
+    <summary>⚠️ Full Disclaimer ⚠️</summary>
     
 Use this image at your own risk.
 
-1. By using it, you automatically agree to the associated license agreement terms.
+1. By using it, you automatically agree to the associated license agreement.
 
-2. The author provides no explicit or implied guarantees regarding the accuracy, completeness, or suitability of this image for any specific purposes. 
+2. The author provides no assurances, explicit or implied, regarding the accuracy, completeness, or suitability of this image for any particular purposes. 
+3. The author is not responsible for any damages, including but not limited to direct, indirect, incidental, consequential, or special damages arising from the use or inability to use this image or the provided documentation, even if such damages were foreseen.
 
-3. The author is not responsible for any losses, including, but not limited to, direct, indirect, incidental, consequential, or special damages resulting from the use or inability to use this image or its accompanying documentation, even if the possibility of such damages was forewarned.
-
-4. By using this image, you acknowledge and assume all risks associated with its application. Additionally, you agree that the author cannot be held accountable for any issues or consequences arising from its use.
+4. By using this image, you confirm and accept all risks associated with its application. Furthermore, you agree that the author cannot be held accountable for any issues or consequences arising from its use.
 
 </details> 
 
@@ -70,18 +70,21 @@ Use this image at your own risk.
 </h3>
 
 <p align="center"> 
-If this project was useful to you, feel free to rate it by giving it a star.:star2: 
+If you find this project helpful, consider giving it a star.:star2: 
 </p>
 
 <p align="center">
   <a href="https://pay.cloudtips.ru/p/7249ba98" target="_blank">
     <img src="../media/buymeacoffe.png" alt="Buy Me a Coffee">
   </a>
+  <a href="https://pay.cloudtips.ru/p/7249ba98" target="_blank">
+    <img src="../media/buymeacoffe.png" alt="Buy Me a Coffee">
+  </a>
 </p>
 
 <h4 align="center"> 
-Donations are warmly welcomed, no matter how small they are. Thank you very much. 😌 
-</h1>
+Donations are warmly welcomed, no matter how small, and we truly appreciate it. 😌 
+</h4>
 
 <div align="center">
 
@@ -99,10 +102,13 @@ Donations are warmly welcomed, no matter how small they are. Thank you very much
 ---
 
 <p align="center">
-  <sub> Thank you for your attention to the project and for your support 💙 </sub>
+  <sub> Thank you for your attention to the project and your support 💙 </sub>
 </p>
 
 ---
+
+* * * * * * * * * * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * 
 
 ## 📚 Table of Contents
 
@@ -110,7 +116,8 @@ Donations are warmly welcomed, no matter how small they are. Thank you very much
 
 ## 🔗 Useful Links
 
----
+* * * * * * * * * * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * 
 
 <h2 align="center">
   <a href="#-table-of-contents"> ⬆️ Back to Top </a> 
@@ -120,7 +127,7 @@ Donations are warmly welcomed, no matter how small they are. Thank you very much
 Technical Requirements
 </h1>
 
-## 📊 Recommended OS
+## 📊 Recommended Operating System
 
 <details> 
     <summary>⚙️ Expand Description</summary>
@@ -137,7 +144,7 @@ Technical Requirements
 - AlmaLinux 8.0+
 - Rocky Linux 8+
 - Oracle Linux 8+
-- OpenSUSE Tubleweed
+- OpenSUSE Tumbleweed
 - Amazon Linux 2023
 - Windows x64
 
@@ -148,23 +155,23 @@ Technical Requirements
 <details> 
     <summary>⚙️ Expand Description</summary>
 
-Our platform provides compatibility with a wide range of architectures and devices, ensuring flexibility in various computing environments. Below are the main supported architectures:
+Our platform offers compatibility with a diverse range of architectures and devices, ensuring flexibility in various computing environments. The following are the major architectures we support:
 
-- **amd64:** This common architecture is a standard for personal computers and servers, ensuring seamless operation of most modern operating systems.
+- **amd64:** A widely used architecture that serves as the standard for personal computers and servers, ensuring seamless operation for most modern operating systems.
 
-- **x86 / i386:** Widely used in desktops and laptops. The architecture has broad support from numerous OS and applications, including `Windows, macOS, and Linux`.
+- **x86 / i386:** Commonly used in desktop and laptop computers. The architecture enjoys broad support from numerous operating systems and applications, including but not limited to `Windows, macOS, and Linux`.
 
-- **armv8 / arm64 / aarch64:** Designed for modern mobile and embedded devices, such as smartphones and tablets. Examples include `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`, and others.
+- **armv8 / arm64 / aarch64:** Designed for cutting-edge mobile and embedded devices like smartphones and tablets. Examples include `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`, `Orange Pi 3 LTS`, and others.
 
-- **armv7 / arm / arm32:** Serves as the architecture for older mobile and embedded devices. Still widely used in devices like `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, and others.
+- **armv7 / arm / arm32:** Serves as the architecture for older mobile and embedded devices, still commonly used in devices like `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2`, and others.
 
-- **armv6 / arm / arm32:** Designed for very old embedded devices. Although less common, still used in devices like `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
+- **armv6 / arm / arm32:** Aimed at older embedded devices. Although less prevalent, it is still utilized in devices like `Raspberry Pi 1, Raspberry Pi Zero/Zero W`.
 
-- **armv5 / arm / arm32:** An older architecture mainly associated with early embedded systems. Rare today but may be found on legacy devices like early `Raspberry Pi` versions and some old smartphones.
+- **armv5 / arm / arm32:** An older architecture associated primarily with early embedded systems. Now scarcely used, it may still be found in outdated devices such as early `Raspberry Pi` versions and some old smartphones.
 
-- **s390x:** This architecture is typically used in `IBM` mainframes, offering high performance and reliability for enterprise workloads.
+- **s390x:** This architecture is commonly used in `IBM mainframes`, providing high performance and reliability for enterprise workloads.
 
-</details>
+</details> 
 
 ## 📊 Supported Languages
 
@@ -184,49 +191,47 @@ Our platform provides compatibility with a wide range of architectures and devic
 - Turkish
 - Português (Brazil)
 
-</details>
+</details> 
 
 ## 📊 Features
 
 <details> 
     <summary>⚙️ Expand Description</summary>
 
-- System monitoring
-- Search all incoming connections and clients
+- System status monitoring
+- Search across all incoming connections and clients
 - Theme: `dark/light`
-- Multi-user and multi-protocol support
+- Support for multi-user and multi-protocol
 - Protocols supported: `VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- Native XTLS protocol support: `RPRX-Direct, Vision, REALITY`
-- Traffic statistics, traffic limit, and expiration time
+- Support for native XTLS protocols: `RPRX-Direct, Vision, REALITY`
+- Traffic statistics, bandwidth limit, expiration time limit
 - Customizable `Xray` configuration templates
-- Access panel support via `HTTPS (custom domain + SSL certificate)`
-- One-click `SSL certificate` request and automatic renewal
-- For more advanced configuration parameters, refer to the panel
-- Fixed `API routes` (user settings are created via `API`)
-- Support for modifying configurations by parameters available in the panel
-- Support for exporting/importing database through the panel
+- HTTPS access panel support (`personal domain + SSL certificate`)
+- One-click request for `SSL certificate` and automatic renewal
+- Advanced configuration options accessible via the panel
+- Fixed `API routes` (user settings created via `API`)
+- Database import/export support through the panel
 
-</details>
+</details> 
 
 <h1 align="center">
 ⚠️ Disclaimer ⚠️
-</h2>
+</h1>
 
 <details align="center"> 
     <summary> ⚙️ Expand Description </summary>
 
-Use this image at your own risk. By using it, you automatically agree to the associated license agreement terms.
+Use this image at your own risk. By using it, you automatically agree to the terms of the associated license agreement.
 
-The author provides no explicit or implied guarantees regarding the accuracy, completeness, or suitability of this image for any specific purposes. The author is not responsible for any losses, including, but not limited to, direct, indirect, incidental, consequential, or special damages resulting from the use or inability to use this image or its accompanying documentation, even if the possibility of such damages was forewarned.
+The author provides no assurances, explicit or implied, regarding the accuracy, completeness, or suitability of this image for any specific purposes. The author is not responsible for any damages, including but not limited to direct, indirect, incidental, consequential, or special damages arising from the use or inability to use this image or the accompanying documentation, even if such damages were foreseen.
 
-By using this image, you acknowledge and assume all risks associated with its application. Additionally, you agree that the author cannot be held accountable for any issues or consequences arising from its use.
+By using this image, you confirm and accept all risks associated with its application. Furthermore, you agree that the author cannot be held accountable for any issues or consequences arising from its use.
 
 </details> 
 
 <div align="center">
   <img src="../media/image0.gif" alt="SPACER" width="90%">
 </div>
-
 
 <h2 align="center">
   <a href="#-table-of-contents">⬆️ Back to Top</a> 
@@ -237,16 +242,50 @@ Cloudflare SSL Certificate
 </h1>
 
 <div align="center">
-  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt="Cloud flare" width="50%">
+  <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
-
-The management script includes a built-in function for requesting `SSL certificates` via `Cloudflare`. To obtain a certificate using this script, you will need:
+  
+The management script includes a built-in function to request an `SSL certificate` via `Cloudflare`. To obtain a certificate using this script, you will need:
 
 <details> 
     <summary> ⚙️ Expand Description </summary>
 
-- An email registered with `Cloudflare`
-- Global API Key from Cloudflare
-- A domain name that is pointed (configured in DNS) to the current server via `Cloudflare`
+- An email registered in `Cloudflare`
+- Global API Key Cloudflare
+- The domain name must be pointed (DNS set) to the current server via `Cloudflare`
 
-...
+## How to get a Global API Key from Cloudflare:
+
+1. Execute the `x-ui` command in the terminal and select `Cloudflare SSL Certificate`.
+
+2. Go to the following link: [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+
+3. Click `View Global API Key` (refer to the screenshot below):
+
+<div align="center">
+  <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
+</div>
+
+4. You may need to re-authenticate. After this, the key will be displayed (refer to the screenshot below):
+
+<div align="center">
+  <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
+</div>
+
+Simply input your domain, `email`, and `API KEY` as shown in the example below:
+
+<div align="center">
+  <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
+</div>
+
+</details> 
+
+Complete the additional SSL Certificate configuration by following the visual instructions in the detailed guides included in this documentation.
+
+... 
+
+<h1 align="center"> 📜 License </h1>
+
+<p align="center">
+<strong>This project is licensed under the </strong><a href="/LICENSE">Apache License</a>.
+</p>
