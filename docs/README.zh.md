@@ -32,11 +32,11 @@
 
 
 <h1 align="center"> 
-安装和配置 3x-ui + SSL 证书的教程
+安装与配置 3x-ui + SSL 证书指南
 </h1>
 
 <h2 align="center">
-> 💡 该内容面向有一定经验的用户。
+> 💡 本文适用于有技术基础的用户。
 </h2>
 
 
@@ -50,32 +50,32 @@
 </h2>
 
 <p align="center">
-  作者不对使用本项目可能引发的任何后果负责。<br>
-  使用风险自负。
+  作者对使用本项目可能产生的任何后果概不负责。<br>
+  使用需自行承担风险。
 </p>
 
 <details align="center"> 
-    <summary>⚠️完整免责声明⚠️</summary>
+    <summary>⚠️完整声明⚠️</summary>
     
-使用此镜像需自行承担风险。
+使用该镜像时需自行承担风险。
 
-1. 使用此镜像即表示您自动同意相关许可证协议中的条款。
+1. 使用时，您自动同意与之相关的许可协议条款。
 
-2. 作者不为该镜像在任何特定目的上的准确性、完整性或适用性提供任何明示或暗示的保证。
-3. 作者不对因使用或无法使用该镜像或其附带文档而引起的任何直接、间接、偶然、附带或特殊损失负责，即使事先已被告知可能会发生此类损失。
+2. 作者不对该镜像的准确性、完整性或特定用途适用性作任何明示或暗示的保证。
+3. 作者不对因此镜像或其相关文档的使用或无法使用引起的任何损失负责。包括但不限于直接、间接、附带、衍生或特殊损失，即使事先已被告知可能性。
 
-4. 您使用该镜像即表示自行承担所有相关风险。此外，您同意作者不对因使用该镜像而引发的任何问题或后果负责。
+4. 使用该镜像即表示您承认并接受所有相关的使用风险。此外，您同意作者不对使用该镜像可能产生的任何问题或后果负责。
 
 </details> 
 
 ---
 
 <h3 align="center"> 
-💖 支持项目 
+💖 支持本项目 
 </h3>
 
 <p align="center"> 
-若此项目对您有帮助，请为其点赞以示支持。:star2: 
+如果您觉得本项目对您有用，可以点亮小星星支持我们 :star2: 
 </p>
 
 <p align="center">
@@ -90,7 +90,7 @@
 
 
 <h4 align="center"> 
-所有规模的捐款都热烈欢迎，并且万分感谢。😌
+我们非常欢迎任何金额的捐款，非常感谢您的支持！😌 
 </h1>
 
 <div align="center">
@@ -109,7 +109,7 @@
 ---
 
 <p align="center">
-  <sub> 感谢您关注该项目并提供支持 💙 </sub>
+  <sub> 感谢您关注和支持本项目 💙 </sub>
 </p>
 
 ---
@@ -121,14 +121,12 @@
 
 ## 📚 目录
 
-- [简介](#-简介)
+- [介绍](#-介绍)
 
 
 
 
-## 🔗 有用链接
-
-  
+## 🔗 相关链接
 
 
 
@@ -142,7 +140,7 @@
 
 
 <h2 align="center">
-  <a href="#-目录"> ⬆️ 返回顶部 </a> 
+  <a href="#-目录"> ⬆️ 回到顶部 </a> 
 </h2>
 
 <h1 align="center"> 
@@ -152,7 +150,7 @@
 ## 📊 推荐操作系统
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开详情</summary>
 
 - Ubuntu 20.04+
 - Debian 11+
@@ -177,23 +175,23 @@
 ## 📊 支持的架构和设备
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开详情</summary>
 
-我们的平台兼容多种架构和设备，提供不同计算环境的灵活性。以下列出主要支持的架构：
+本平台支持多种架构和设备，以便在不同的计算环境中实现灵活性。以下列出了支持的主要架构：
 
-- **amd64:** 常见的个人电脑和服务器架构，支持大多数现代操作系统。
+- **amd64:** 普通桌面电脑和服务器标准架构，兼容现代操作系统。
 
-- **x86 / i386:** 广泛用于台式机和笔记本，支持多个操作系统和应用，包括 `Windows, macOS 和 Linux`。
+- **x86 / i386:** 常见于桌面电脑和笔记本电脑。支持众多操作系统和应用，包括`Windows`, `macOS`和`Linux`。
 
-- **armv8 / arm64 / aarch64:** 面向现代移动和嵌入式设备，如 `Raspberry Pi 4, Raspberry Pi 3, Raspberry Pi Zero 2/Zero 2 W`，`Orange Pi 3 LTS` 等。
+- **armv8 / arm64 / aarch64:** 主要针对现代移动设备与嵌入式设备，如智能手机与平板电脑。例如：`树莓派 4`, `树莓派 3`, `橙子派 3 LTS`等。
 
-- **armv7 / arm / arm32:** 支持旧型号移动和嵌入式设备，常用于 `Orange Pi Zero LTS, Orange Pi PC Plus, Raspberry Pi 2` 等。
+- **armv7 / arm / arm32:** 适用于较早前的移动与嵌入式设备，适配于`橙子派 Zero LTS`, `橙子派 PC Plus`, `树莓派 2`等。
 
-- **armv6 / arm / arm32:** 面向非常老旧嵌入式设备，如 `Raspberry Pi 1, Raspberry Pi Zero/Zero W`。
+- **armv6 / arm / arm32:** 针对非常早期的嵌入式设备，例如`树莓派 1`, `树莓派 Zero/Zero W`。
 
-- **armv5 / arm / arm32:** 更老旧的架构，主要用于早期嵌入式系统。今天很少见，但仍用于某些旧设备如早期 `Raspberry Pi`。
+- **armv5 / arm / arm32:** 用于更古老的一些嵌入式系统，现在使用较少，但仍可能支持某些旧设备。
 
-- **s390x:** 通常用于 `IBM` 大型机，为企业工作负载提供高性能和可靠性。
+- **s390x:** 大型机`s390x`提供高性能和高可靠性，广泛应用于企业级任务。
 
 </details> 
 
@@ -203,7 +201,7 @@
 ## 📊 支持的语言
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开详情</summary>
 
 - English
 - Persian
@@ -223,25 +221,25 @@
 
 
 
-## 📊 功能 || 特点
+## 📊 功能特点
 
 <details> 
-    <summary>⚙️ 展开描述</summary>
+    <summary>⚙️ 展开详情</summary>
 
 - 系统状态监控
-- 查询所有入站连接和客户
-- 主题：`黑暗 / 光亮`
-- 多用户及多协议支持
+- 搜索所有入站连接和客户端
+- 主题模式：`暗黑/明亮`
+- 支持多用户和多协议
 - 支持协议：`VMESS, VLESS, Trojan, Shadowsocks, Dokodemo-door, Socks, HTTP, WireGuard`
-- 支持原生 XTLS 协议：`RPRX-Direct, Vision, REALITY`
-- 流量统计，流量限制，时效限制
-- 可定制化的 `Xray` 配置模板
-- 支持通过 `HTTPS（自定义域名 + SSL 证书）` 访问控制面板
-- 支持一键申请 `SSL 证书` 并自动续期
-- 更多高级配置参数见面板
-- 修正的 `API 路由`（用户设置通过 `API` 创建）
-- 支持面板中的多参数配置修改
-- 支持导出/导入数据库
+- 支持原生的 XTLS 协议：`RPRX-Direct, Vision, REALITY`
+- 流量统计、流量限制及过期时间控制
+- 配置模式定制 `Xray`
+- 面板 HTTPS 支持：`自定义域名 + SSL 证书`
+- 支持一键申请 `SSL证书` 并自动续期
+- 更高级的配置选项详见面板
+- 修复的 `API 路由`（通过 `API` 创建用户设置）
+- 支持面板中的多参配置修改
+- 数据库的导入/导出支持
 
 </details> 
 
@@ -253,13 +251,13 @@
 </h2>
 
 <details align="center"> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
-使用此镜像需自行承担风险。使用即表示您自动同意相关许可证协议中的条款。
+使用该镜像时需自行承担风险。使用即视为同意其相关的许可协议条款。
 
-作者不为该镜像在任何特定目的上的准确性、完整性或适用性提供任何明示或暗示的保证。作者不对因使用或无法使用该镜像或其附带文档而引起的任何直接、间接、偶然、附带或特殊损失负责，即使事先已被告知可能会发生此类损失。
+作者不对该镜像的准确性、完整性或特定用途适用性作任何明示或暗示的保证。作者不对因此镜像或其相关文件使用或无法使用引起的任何直接、间接、附带、衍生或特殊损失负责，即使事先已被告知可能性。
 
-使用此镜像即表示自行承担所有相关风险。此外，您同意作者不对因使用该镜像而引发的任何问题或后果负责。
+使用该镜像即表示您承认并接受所有相关的使用风险。此外，您同意作者不对使用该镜像可能产生的任何问题或后果负责。
 
 </details> 
 
@@ -270,50 +268,52 @@
 
 
 <h2 align="center">
-  <a href="#-目录">⬆️ 返回顶部</a> 
+  <a href="#-目录">⬆️ 回到顶部</a> 
 </h2>
 
 
 
    
 <h1 align="center"> 
-Cloudflare SSL 证书
+配置 Cloudflare 的 SSL 证书
 </h1>
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/cloudflare.jpg" alt=" Cloud flare " width="50%">
 </div>
 
-管理脚本内置通过 `Cloudflare` 请求 `SSL 证书` 的功能。为了通过此脚本获取证书，您需要：
+管理脚本包括通过 `Cloudflare` 请求 `SSL证书` 的内置功能。您需要具备以下条件：
 
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
-- 在 `Cloudflare` 注册的邮箱
-- Global API Key Cloudflare
-- 域名需通过 `Cloudflare` 定向至当前服务器（DNS 已解析）
+- 注册在 `Cloudflare` 的电子邮件地址
+- Cloudflare 的 Global API Key
+- 必须通过 `Cloudflare` 将域名 DNS 指向当前服务器
 
-## 获取 Global API Key Cloudflare 的方法：
 
-1. 在终端运行命令 `x-ui`，然后选择 `Cloudflare SSL Certificate`。
 
-2. 访问链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+## 如何获取 Cloudflare 的 Global API Key：
 
-3. 点击 `View Global API Key`（见下图）：
+1. 在终端中运行命令 `x-ui`，然后选择 `Cloudflare SSL Certificate`。
+
+2. 点击链接：[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+
+3. 点击 `View Global API Key`（参见下方截图）：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey1.png" alt=" API Key 1 " width="70%">
 </div>
 
-4. 可能需要重新身份验证。完成后，密钥将显示（见下图）：
+4. 可能需要重新验证身份，以查看 API Key。例如：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/APIKey2.png" alt=" API Key 2 " width="70%">
 </div>
 
 
-按提示输入您的域名、`email` 和 `API KEY`。如下图所示：
+在使用过程中输入您的域名、电子邮件和 API Key 。示例如下：
 
 <div align="center">
   <img src="../media/Tutorial/Article_1/DetailEnter.png" alt=" Detail Enter " width="70%">
@@ -330,7 +330,7 @@ Cloudflare SSL 证书
 
 
 <h2 align="center">
-  <a href="#-目录">⬆️ 返回顶部</a> 
+  <a href="#-目录">⬆️ 回到顶部</a> 
 </h2>
 
 
@@ -342,7 +342,7 @@ Cloudflare SSL 证书
 # 1. 快速安装 3X
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
 
 ```sh
@@ -357,24 +357,24 @@ bash ./self_signed_certificate.sh
 
 </details> 
 
-# 2. 分步骤安装 3X
+# 2. 分步安装 3X
 
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
 # 📊 安装必要包
 
 1. 更新系统
-在安装之前，请确保您的系统是最新的。运行以下命令：
+安装开始前，请确认您的系统已更新。运行以下命令：
 
 ```sh
 sudo apt update && sudo apt upgrade -y &&
 ```
 
-2. 安装必要包
+2. 安装必要依赖包
 
-确保在服务器上安装了以下必要包：
+确保您的操作环境已装好所需依赖：
 
 ```sh
 apt-get install wget curl openssl qrencode systemd -y
@@ -390,14 +390,14 @@ apt-get install wget curl openssl qrencode systemd -y
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 
-安装过程中，脚本会询问：
+安装过程中脚本会询问：
 
 ```sh
 Would you like to customize the Panel Port settings? (If not, a random port will be applied) [y/n]:
 ```
 
-回答 `y` 自定义端口，或 `n` 脚本将自动生成端口。
-请勿使用默认端口 `22, 80, 8080`，推荐任意非默认端口，例如 `8181`。
+选择 `y` 以手动设置端口，或选择 `n` 由脚本随机生成。
+请勿使用常见端口如 `22, 80, 8080`，建议选择如 `8181` 等其他端口。
 
 
 ```sh
@@ -412,13 +412,13 @@ WebBasePath: vpkPI6ex9ajesDX
 Access URL: http://192.168.0.149:40608/vpkPI6ex9ajesDX
 ```
 
-完成以上步骤后，面板安装完成。您可以通过以下路径在浏览器中访问面板：
+至此，安装完成，可以通过以下路径访问面板：
 
 ```sh
-http://服务器IP地址:端口/WebBasePath(例如: http://192.168.0.10:40608/vpkPI6ex9ajesDX)
+http://您的服务器IP:端口/WebBasePath（如：http://192.168.0.10:40608/vpkPI6ex9ajesDX）
 ```
 
-在浏览器中输入地址，将进入登录界面。输入脚本提供的用户名和密码以登录面板。
+在浏览器中输入该地址即可进入登录页面，使用脚本提供的用户名和密码登录。
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Login.png" alt="Login" width="70%">
@@ -433,21 +433,21 @@ http://服务器IP地址:端口/WebBasePath(例如: http://192.168.0.10:40608/vp
 
 
 <h1 align="center"> 
-一般设置
+通用设置
 </h1>
 
-## 更新 GeoSite 和 GeoIP
+## 更新 GeoSite GeoIP 数据
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
-打开版本和更新设置菜单。
+打开版本与更新选项
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UISetting.png" alt="UISetting" width="70%">
 </div>
 
-更新数据文件 `GeoSite` 和 `GeoIP`。
+更新数据文件 `GeoSite` 和 `GeoIP`
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/UpdateGeo_Site_IP.png" alt="Update GeoSite GeoIP" width="70%">
@@ -459,29 +459,29 @@ http://服务器IP地址:端口/WebBasePath(例如: http://192.168.0.10:40608/vp
 ## 启用订阅功能
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
-进入 `设置` 并启用订阅。
+进入 `设置` 并启用订阅功能：
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting.png" alt="Setting" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启面板`。
+完成后点击 `保存` 并选择 `重启面板`
 
-# X-Ray 设置
+# X-Ray 配置
 
-## 基本连接设置
+## 基础连接
 
-进入 `X-Ray 设置` -> 选择 `核心设置` -> 打开子菜单 `基本连接设置`
+进入 `X-Ray 设置` -> 选择 `常规` -> 打开子选项 `基础连接`
 
-按图片进行设置：
+按如下设置，确保正确：
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启 Xray`。
+完成后点击 `保存` 并选择 `重启 X-Ray`
 
 </details> 
 
@@ -492,16 +492,16 @@ http://服务器IP地址:端口/WebBasePath(例如: http://192.168.0.10:40608/vp
 ## DNS 设置
 
 <details> 
-    <summary> ⚙️ 展开描述 </summary>
+    <summary> ⚙️ 展开详情 </summary>
 
 
-进入 `X-Ray 设置` -> 选择 `DNS 设置` -> 打开 `DNS` 子菜单。
+进入 `X-Ray 设置` -> 选择 `DNS` -> 打开子选项 `DNS`
 
 <div align="center">
   <img src="../media/Tutorial/Article_3/Setting_Xray_DNS.png" alt="Setting Xray DNS" width="70%">
 </div>
 
-点击 `添加 DNS` 并依次输入 `DNS 地址`：
+点击 `创建 DNS` 然后逐个添加 `DNS地址`
 
 ```bash
 tcp://8.8.8.8
@@ -519,7 +519,7 @@ tcp://9.9.9.9
   <img src="../media/Tutorial/Article_3/DNS.png" alt="DNS" width="70%">
 </div>
 
-完成后点击 `保存` 并 `重启 Xray`。
+完成后点击 `保存` 并选择 `重启 X-Ray`
 
 </details> 
 
@@ -534,12 +534,12 @@ tcp://9.9.9.9
 
 
 <h1 align="center"> 
-配置第一个连接
+设置第一个连接
 </h1>
 
-## 现在可以开始配置第一个连接。
+## 现在可以设置第一个连接了。
 
-在侧栏菜单中进入 `"连接"` -> 点击 `"添加连接"`。
+在左侧菜单中进入 `"连接"` -> 点击 `"新增连接"`
 
 <div align="center">
   <img src="../media/Tutorial/Article_4/UI.png" alt="UI" width="70%">
@@ -554,17 +554,16 @@ tcp://9.9.9.9
 
 
 
-<h1 align="center"> 📜 许可证 </h1>
+<h1 align="center"> 📜 许可协议 </h1>
 <p align="center">
-  <strong> 本项目基于 </strong> 
-  <a href="/LICENSE">Apache 协议</a> 
-  <strong> 发布 </strong> 
+  <strong> 本项目采用 </strong> 
+  <a href="/LICENSE">Apache License</a> 
 </p>
 
 ---
 
 <h2 align="center"> 
-文档 
+文档信息，请查阅 
 </h2>
 
 
