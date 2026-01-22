@@ -21,8 +21,8 @@ name: Update README & Auto-Translate (combined)
 
 on:
   workflow_dispatch:   # ручной запуск
-  schedule:
-    - cron: '10 9 * * *'  # ежедневный запуск (09:10 UTC)
+  #schedule:
+  #  - cron: '10 9 * * *'  # ежедневный запуск (09:10 UTC)
   push:
     branches: [ main ]
     paths:
