@@ -3,8 +3,8 @@ name: V2 UPDATE-README
 # Запускается вручную, по расписанию и при изменении частей README
 on:
   workflow_dispatch:                                 # Ручной запуск из вкладки Actions
-  schedule:
-    - cron: '10 9 * * *'                             # Каждый день в 09:10 UTC = 12:10 по Москве
+#  schedule:
+#    - cron: '10 9 * * *'                             # Каждый день в 09:10 UTC = 12:10 по Москве
 #  push:
 #    branches: [ main ]
 #    paths:
